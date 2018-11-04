@@ -1,7 +1,7 @@
 # Wirtuoz klawiatury
 Projekt edukacyjny gry mającej na celu zwiększenie szybkości oraz ergonomii pisania
 
-*W trakcie tworzenia projektu opis oraz commity reazliwane będą w języku polskim.*
+*W trakcie tworzenia projektu opis oraz commity realizowane będą w języku polskim.*
 
 ## Główne cele oraz założenia projektu
 * Tryb rozgrywki wymagający od gracza wpisywania fraz
