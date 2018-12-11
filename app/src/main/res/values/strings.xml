@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">KeyboardVirtuoso</string>
+    <string name="btn_start_phrases_mode">Phrases mode</string>
+    <string name="btn_start_chars_mode">Chars mode</string>
+    <string name="text_start_game">Start game</string>
+    <string name="btn_settings">Settings</string>
+    <string name="btn_statistics">Statistics</string>
+    <string name="text_app_display_name">Keyboard Virtuoso</string>
+    <string name="text_phrases_count">Phrase:</string>
+    <string name="text_chars_count">Char:</string>
+    <string name="btn_phrases_mode_start_normal">Start</string>
+    <string name="btn_restart_game">Restart game</string>
+    <string name="btn_return_to_menu">Retrun to menu</string>
+    <string name="btn_go_to_statistics">Go to statistics</string>
+    <string name="btn_exit_game">Exit game</string>
+    <string name="text_setting_title">Settings</string>
+    <string name="text_statistics_title">Statistics</string>
+</resources>

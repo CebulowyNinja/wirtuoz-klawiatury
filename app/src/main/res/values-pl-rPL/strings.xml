@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Wirtuoz klawiatury</string>
+    <string name="btn_start_phrases_mode">Tryb wpisywania fraz</string>
+    <string name="btn_start_chars_mode" >Tryb wpisywania znaków</string>
+    <string name="text_start_game">Zacznij grę</string>
+    <string name="btn_settings">Ustawienia</string>
+    <string name="btn_statistics">Statystyki</string>
+    <string name="text_app_display_name">Wirtuoz klawiatury</string>
+    <string name="text_phrases_count">Fraza:</string>
+    <string name="text_chars_count">Znak:</string>
+    <string name="btn_phrases_mode_start_normal">Rozpocznij grę</string>
+    <string name="btn_restart_game">Zagraj ponownie</string>
+    <string name="btn_return_to_menu">Wróć do menu</string>
+    <string name="btn_go_to_statistics">Idź do statystyk</string>
+    <string name="btn_exit_game">Zakończ grę</string>
+    <string name="text_setting_title">Ustawienia</string>
+    <string name="text_statistics_title">Statystyki</string>
+</resources>
