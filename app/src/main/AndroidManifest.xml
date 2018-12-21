@@ -19,8 +19,7 @@
         <activity android:name=".PhrasesModeActivity" />
         <activity android:name=".CharsModeActivity" />
         <activity android:name=".SettingsActivity" />
-        <activity android:name=".test" />
-        <activity android:name=".StatisticsActivity"></activity>
+        <activity android:name=".StatisticsActivity" />
     </application>
 
 </manifest>
