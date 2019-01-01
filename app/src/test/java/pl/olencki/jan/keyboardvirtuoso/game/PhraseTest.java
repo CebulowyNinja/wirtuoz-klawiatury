@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class ChallengePhraseTest {
+public class PhraseTest {
 
     @Test
     public void testBasicGetters() {
@@ -16,22 +16,23 @@ public class ChallengePhraseTest {
                 "a",
                 "bike"
         };
-        ChallengePhrase challengePhrase = new ChallengePhrase(phrase);
-        assertEquals(challengePhrase.getPhrase(), phrase);
+        Phrase challengePhrase = new Phrase(phrase);
+        assertEquals(challengePhrase.getText(), phrase);
         assertArrayEquals(challengePhrase.getWords(), words);
     }
 
     @Test
     public void testDiacriticMethods() {
         String word = "łąka";
-        assertEquals(ChallengePhrase.countDiacriticChars(word), 2);
+        assertEquals(Phrase.countDiacriticChars(word), 2);
 
         String phrase = "Coś ty narobił";
         String[] words = {
                 "Coś",
                 "narobił"
         };
-        ChallengePhrase challengePhrase = new ChallengePhrase(phrase);
+        Phrase challengePhrase = new Phrase(phrase);
+        assertEquals(challengePhrase.getDiacriticCharsCount(), 2);
         assertArrayEquals(challengePhrase.getWordsWithDiacritic(), words);
     }
 }
