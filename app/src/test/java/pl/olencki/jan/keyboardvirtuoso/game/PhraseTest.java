@@ -16,7 +16,9 @@ public class PhraseTest {
                 "a",
                 "bike"
         };
+
         Phrase challengePhrase = new Phrase(phrase);
+
         assertEquals(challengePhrase.getText(), phrase);
         assertArrayEquals(challengePhrase.getWords(), words);
     }
@@ -27,12 +29,14 @@ public class PhraseTest {
         assertEquals(Phrase.countDiacriticChars(word), 2);
 
         String phrase = "Coś ty narobił";
-        String[] words = {
+        String[] wordsWithDiacritics = {
                 "Coś",
                 "narobił"
         };
+
         Phrase challengePhrase = new Phrase(phrase);
+
         assertEquals(challengePhrase.getDiacriticCharsCount(), 2);
-        assertArrayEquals(challengePhrase.getWordsWithDiacritic(), words);
+        assertArrayEquals(challengePhrase.getWordsWithDiacritics(), wordsWithDiacritics);
     }
 }

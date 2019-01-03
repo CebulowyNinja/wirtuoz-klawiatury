@@ -33,14 +33,15 @@ public class Phrase {
 
     public String[] getWordsWithDiacritics() {
         ArrayList<String> withDiacritic = new ArrayList<>();
+
         for (String word : getWords()) {
             if (countDiacriticChars(word) > 0) {
                 withDiacritic.add(word);
             }
         }
 
-        String[] wordsWithDiacritic = new String[withDiacritic.size()];
-        return withDiacritic.toArray(wordsWithDiacritic);
+        String[] withDiacriticArray = new String[withDiacritic.size()];
+        return withDiacritic.toArray(withDiacriticArray);
     }
 
     public int getDiacriticCharsCount() {

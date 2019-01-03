@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 public class PhrasesGenerator {
-    private List<Phrase> phrases = new ArrayList<>();
+    private ArrayList<Phrase> phrases = new ArrayList<>();
     private Random randGenerator = new Random();
 
     public PhrasesGenerator(String[] phrasesString) {
@@ -14,10 +14,8 @@ public class PhrasesGenerator {
         }
     }
 
-    public Phrase[] getAllPhrases() {
-        Phrase[] phrasesArray = new Phrase[phrases.size()];
-
-        return phrases.toArray(phrasesArray);
+    public List<Phrase> getPhrases() {
+        return (List<Phrase>) phrases.clone();
     }
 
     public Phrase getRandomPhrase() {
