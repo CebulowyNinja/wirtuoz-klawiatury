@@ -29,8 +29,8 @@ public class CharGameDaoTest {
         charGameDao = database.charGameDao();
 
         keyboardDao = database.keyboardDao();
-        keyboards.add(new KeyboardData(null, "KeyboardData Test", "com.keyboard.test"));
-        keyboards.add(new KeyboardData(null, "KeyboardData Test 2", "com.keyboard.test2"));
+        keyboards.add(new KeyboardData(null, "Keyboard Test", "com.keyboard.test"));
+        keyboards.add(new KeyboardData(null, "Keyboard Test 2", "com.keyboard.test2"));
         keyboardDao.insertMultiple(keyboards);
         keyboards = keyboardDao.findAll();
     }

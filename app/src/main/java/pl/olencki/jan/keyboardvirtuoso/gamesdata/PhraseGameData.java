@@ -11,7 +11,8 @@ import java.util.Objects;
 
 import static android.arch.persistence.room.ForeignKey.CASCADE;
 
-@Entity(foreignKeys = {
+@Entity(tableName = "PhraseGame",
+        foreignKeys = {
         @ForeignKey(entity = KeyboardData.class,
                     parentColumns = "id",
                     childColumns = "keyboardId",

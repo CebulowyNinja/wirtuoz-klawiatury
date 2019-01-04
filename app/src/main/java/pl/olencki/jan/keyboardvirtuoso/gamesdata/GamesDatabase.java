@@ -22,4 +22,8 @@ abstract class GamesDatabase extends RoomDatabase {
     abstract public CharChallengeDao charChallengeDao();
 
     abstract public PhraseChallengeDao phraseChallengeDao();
+
+    abstract public CharGameStatisticsDao charGameStatisticsDao();
+
+    abstract public PhraseGameStatisticsDao phraseGameStatisticsDao();
 }

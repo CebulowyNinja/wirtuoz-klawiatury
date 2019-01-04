@@ -36,7 +36,7 @@ public class CharChallengeDaoTest {
         charChallengeDao = database.charChallengeDao();
 
         keyboardDao = database.keyboardDao();
-        keyboards.add(new KeyboardData(null, "KeyboardData Test", "com.keyboard.test"));
+        keyboards.add(new KeyboardData(null, "Keyboard Test", "com.keyboard.test"));
         keyboardDao.insertMultiple(keyboards);
         keyboards = keyboardDao.findAll();
 
@@ -64,7 +64,7 @@ public class CharChallengeDaoTest {
         CharChallengeData charChallengeById = charChallengeDao.findById(charChallenges.get(0).id);
         assertEquals(charChallenges.get(0), charChallengeById);
 
-        List<CharChallengeData> charChallengesByGameId = charChallengeDao.findByGameId(keyboards.get(0).id);
+        List<CharChallengeData> charChallengesByGameId = charChallengeDao.findByGameId(games.get(0).id);
         assertEquals(charChallenges.get(0), charChallengesByGameId.get(0));
 
         charChallengeDao.delete(charChallenges.get(0));

@@ -6,7 +6,7 @@ import android.support.annotation.NonNull;
 
 import java.util.Objects;
 
-@Entity
+@Entity(tableName = "keyboard")
 public class KeyboardData {
     @PrimaryKey(autoGenerate = true)
     public Long id;

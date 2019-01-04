@@ -9,13 +9,13 @@ import java.util.List;
 
 @Dao
 public interface CharChallengeDao {
-    @Query("SELECT * FROM CharChallengeData")
+    @Query("SELECT * FROM CharChallenge")
     List<CharChallengeData> findAll();
 
-    @Query("SELECT * FROM CharChallengeData WHERE id = :charChallengeId")
+    @Query("SELECT * FROM CharChallenge WHERE id = :charChallengeId")
     CharChallengeData findById(long charChallengeId);
 
-    @Query("SELECT * FROM CharChallengeData WHERE gameId = :gameId")
+    @Query("SELECT * FROM CharChallenge WHERE gameId = :gameId")
     List<CharChallengeData> findByGameId(long gameId);
 
     @Insert
@@ -30,6 +30,6 @@ public interface CharChallengeDao {
     @Delete
     int deleteMultiple(List<CharChallengeData> charChallenges);
 
-    @Query("DELETE FROM CharChallengeData WHERE gameId = :gameId")
+    @Query("DELETE FROM CharChallenge WHERE gameId = :gameId")
     int deleteByGameId(long gameId);
 }

@@ -9,13 +9,13 @@ import java.util.List;
 
 @Dao
 public interface KeyboardDao {
-    @Query("SELECT * FROM KeyboardData")
+    @Query("SELECT * FROM keyboard")
     List<KeyboardData> findAll();
 
-    @Query("SELECT * FROM KeyboardData WHERE id = :keyboardId")
+    @Query("SELECT * FROM keyboard WHERE id = :keyboardId")
     KeyboardData findById(long keyboardId);
 
-    @Query("SELECT * FROM KeyboardData WHERE className = :className")
+    @Query("SELECT * FROM keyboard WHERE className = :className")
     KeyboardData getByClassName(String className);
 
     @Insert

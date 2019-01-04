@@ -13,7 +13,7 @@ import pl.olencki.jan.keyboardvirtuoso.game.CharType;
 
 import static android.arch.persistence.room.ForeignKey.CASCADE;
 
-@Entity(tableName = "CharChallengeData",
+@Entity(tableName = "CharChallenge",
         foreignKeys = {
         @ForeignKey(entity = CharGameData.class,
                     parentColumns = "id",

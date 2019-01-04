@@ -53,8 +53,7 @@ public class PhraseChallengeDaoTest {
     @Test
     public void testReadInsertDelete() {
         PhraseChallengeData phraseChallengeSample = new PhraseChallengeData(null, games.get(0).id,
-                                                                            "Test phrase", 1, 1, 1,
-                                                                            "Test phrase", 1 , 1, 1, 1);
+                                                                            "Test phrase", 1, 1, 1);
         phraseChallengeDao.insert(phraseChallengeSample);
 
         List<PhraseChallengeData> phraseChallenges = phraseChallengeDao.findAll();
@@ -77,11 +76,9 @@ public class PhraseChallengeDaoTest {
     public void testMultipleInsertDelete() {
         List<PhraseChallengeData> phraseChallengesSample = new ArrayList<>();
         phraseChallengesSample.add(
-                new PhraseChallengeData(null, games.get(0).id, "Test phrase", 1, 1, 1,
-                                        "Test phrase", 1 , 1, 1, 1));
+                new PhraseChallengeData(null, games.get(0).id, "Test phrase", 1, 1, 1));
         phraseChallengesSample.add(
-                new PhraseChallengeData(null, games.get(0).id, "Test phrase", 1, 1, 1,
-                                        "Test phrase", 1 , 1, 1, 1));
+                new PhraseChallengeData(null, games.get(0).id, "Test phrase", 1, 1, 1));
         phraseChallengeDao.insertMultiple(phraseChallengesSample);
 
         List<PhraseChallengeData> phraseChallenges = phraseChallengeDao.findAll();
@@ -95,11 +92,9 @@ public class PhraseChallengeDaoTest {
     public void testDeleteByGameId() {
         List<PhraseChallengeData> phraseChallengesSample = new ArrayList<>();
         phraseChallengesSample.add(
-                new PhraseChallengeData(null, games.get(0).id, "Test phrase", 1, 1, 1,
-                                        "Test phrase", 1 , 1, 1, 1));
+                new PhraseChallengeData(null, games.get(0).id, "Test phrase", 1, 1, 1));
         phraseChallengesSample.add(
-                new PhraseChallengeData(null, games.get(0).id, "Test phrase", 1, 1, 1,
-                                        "Test phrase", 1 , 1, 1, 1));
+                new PhraseChallengeData(null, games.get(0).id, "Test phrase", 1, 1, 1));
         phraseChallengeDao.insertMultiple(phraseChallengesSample);
 
         phraseChallengeDao.deleteByGameId(games.get(0).id);
