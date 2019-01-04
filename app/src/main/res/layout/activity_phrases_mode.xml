@@ -86,6 +86,6 @@
 
     <include
         layout="@layout/content_summary_phrases_mode"
-        android:visibility="visible" />
+        android:visibility="invisible" />
 
 </android.support.constraint.ConstraintLayout>

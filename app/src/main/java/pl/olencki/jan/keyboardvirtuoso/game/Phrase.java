@@ -1,6 +1,7 @@
 package pl.olencki.jan.keyboardvirtuoso.game;
 
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -46,5 +47,19 @@ public class Phrase {
 
     public int getDiacriticCharsCount() {
         return countDiacriticChars(phrase);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Phrase phrase1 = (Phrase) o;
+        return Objects.equals(phrase, phrase1.phrase);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(phrase);
     }
 }

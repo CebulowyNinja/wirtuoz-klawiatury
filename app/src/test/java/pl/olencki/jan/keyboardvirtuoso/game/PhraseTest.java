@@ -24,6 +24,20 @@ public class PhraseTest {
     }
 
     @Test
+    public void testEquals() {
+        Phrase phrase1 = new Phrase("Test");
+        Phrase phrase2 = new Phrase("Test");
+        Phrase phrase3 = new Phrase("Test22");
+
+        assertTrue(phrase1.equals(phrase1));
+        assertTrue(phrase1.equals(phrase2));
+        assertTrue(phrase2.equals(phrase1));
+
+        assertFalse(phrase1.equals(phrase3));
+        assertFalse(phrase3.equals(phrase1));
+    }
+
+    @Test
     public void testDiacriticMethods() {
         String word = "łąka";
         assertEquals(Phrase.countDiacriticChars(word), 2);

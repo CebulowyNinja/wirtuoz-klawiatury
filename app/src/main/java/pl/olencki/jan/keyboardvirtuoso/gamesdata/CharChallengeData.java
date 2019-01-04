@@ -36,7 +36,7 @@ public class CharChallengeData {
     public char typedCharacter;
     public boolean isCorrect;
 
-    public int elapsedTime;
+    public float elapsedTime;
 
     @Ignore
     public CharChallengeData(Long id, long gameId, @NonNull CharType charType, char character) {
@@ -47,7 +47,7 @@ public class CharChallengeData {
     }
 
     public CharChallengeData(Long id, long gameId, @NonNull CharType charType, char character,
-                             char typedCharacter, boolean isCorrect, int elapsedTime) {
+                             char typedCharacter, boolean isCorrect, float elapsedTime) {
         this.id = id;
         this.gameId = gameId;
         this.charType = charType;
@@ -67,12 +67,13 @@ public class CharChallengeData {
                 typedCharacter == that.typedCharacter &&
                 isCorrect == that.isCorrect &&
                 Objects.equals(id, that.id) &&
-                charType == that.charType;
+                charType == that.charType &&
+                Math.abs(elapsedTime - that.elapsedTime) < 0.001;
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(id, gameId, charType, character, typedCharacter, isCorrect);
+        return Objects.hash(id, gameId, charType, character, typedCharacter, isCorrect, elapsedTime);
     }
 }
