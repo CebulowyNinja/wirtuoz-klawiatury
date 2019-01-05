@@ -93,7 +93,7 @@ public class CharGameActivity extends GameActivity {
         hideKeyboard();
 
         showStats();
-        game.addGameDataToDatabase(this.getApplicationContext(), keyboardData);
+        game.addToDatabase(this.getApplicationContext(), keyboardData);
     }
 
     private void showStats() {

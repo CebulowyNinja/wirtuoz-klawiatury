@@ -12,6 +12,7 @@ public class CharWithType {
         for (CharType charType : CharType.values()) {
             if (charType.isContainsChar(character)) {
                 this.charType = charType;
+                break;
             }
         }
     }

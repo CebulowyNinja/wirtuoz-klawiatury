@@ -39,9 +39,9 @@ public class GameEditText extends AppCompatEditText {
 
     @SuppressLint("ClickableViewAccessibility")
     private void blockContextMenu() {
-        this.setCustomSelectionActionModeCallback(new BlockedActionModeCallback());
-        this.setLongClickable(false);
-        this.setOnTouchListener(new OnTouchListener() {
+        setCustomSelectionActionModeCallback(new BlockedActionModeCallback());
+        setLongClickable(false);
+        setOnTouchListener(new OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 GameEditText.this.clearFocus();
@@ -53,7 +53,7 @@ public class GameEditText extends AppCompatEditText {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-            this.setInsertionDisabled();
+            setInsertionDisabled();
         }
         return super.onTouchEvent(event);
     }

@@ -36,11 +36,12 @@ public abstract class Game {
         if (!hasNextChallenge()) {
             return null;
         }
+
         currentChallengeIndex++;
         return getCurrentChallenge();
     }
 
     abstract public void generateNewCurrentChallenge();
 
-    abstract public void addGameDataToDatabase(Context context, KeyboardData keyboard);
+    abstract public void addToDatabase(Context context, KeyboardData keyboard);
 }

@@ -30,7 +30,7 @@ public class CharChallenge extends Challenge {
 
     @Override
     public String getText() {
-        return charWithType.getChar() + "";
+        return Character.toString(charWithType.getChar());
     }
 
     @Override
@@ -39,7 +39,7 @@ public class CharChallenge extends Challenge {
             return null;
         }
 
-        return typedCharWithType.getChar() + "";
+        return Character.toString(typedCharWithType.getChar());
     }
 
     public CharChallengeData generateCharChallengeData(Long id, long gameId) throws CharChallengeException {
@@ -62,7 +62,7 @@ public class CharChallenge extends Challenge {
                                      charWithType.getCharType(), charWithType.getChar());
         data.typedCharacter = typedCharWithType.getChar();
         data.elapsedTime = elapsedTime;
-        data.isCorrect = charWithType.equals(typedCharWithType);
+        data.isCorrect = isCorrect();
 
         return data;
     }

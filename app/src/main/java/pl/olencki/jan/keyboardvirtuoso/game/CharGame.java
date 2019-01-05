@@ -68,58 +68,32 @@ public class CharGame extends Game {
         return new ArrayList<CharGameStatistics>(statisticsSet.values());
     }
 
-    private void generateChars() {
-        for (CharType charType : gameCharTypes) {
-            for (char ch : charType.getAllChars()) {
-                if (!gameChars.contains(ch)) {
-                    gameChars.add(ch);
-                }
-            }
-        }
-    }
-
-    private char getRandomChar() {
-        int index = randGenerator.nextInt(gameChars.size());
-
-        return gameChars.get(index);
-    }
-
-    private CharChallenge getRandomChallenge() {
-        return new CharChallenge(new CharWithType(getRandomChar()));
-    }
-
-    private void generateChallenges(int challengesCount) {
-        for (int i = 0; i < challengesCount; i++) {
-            challenges.add(getRandomChallenge());
-        }
-    }
-
     @Override
     public void generateNewCurrentChallenge() {
         challenges.set(currentChallengeIndex, getRandomChallenge());
     }
 
     @Override
-    public void addGameDataToDatabase(Context context, KeyboardData keyboard) {
+    public void addToDatabase(Context context, KeyboardData keyboard) {
         CharGameData gameData = new CharGameData(null, 0, new Date());
         List<CharChallenge> charChallenges = new ArrayList<>();
         for (Challenge challenge : challenges) {
             charChallenges.add((CharChallenge) challenge);
         }
 
-        AddGameDataToDatabaseParams params = new AddGameDataToDatabaseParams(context, keyboard,
-                                                                             gameData,
-                                                                             charChallenges);
-        new AddGameDataToDatabase().execute(params);
+        AddToDatabaseParams params = new AddToDatabaseParams(context, keyboard,
+                                                             gameData,
+                                                             charChallenges);
+        new AddToDatabase().execute(params);
     }
 
-    private static class AddGameDataToDatabaseParams {
+    private static class AddToDatabaseParams {
         Context context;
         KeyboardData keyboardData;
         CharGameData charGameData;
         List<CharChallenge> charChallenges;
 
-        public AddGameDataToDatabaseParams(Context context, KeyboardData keyboardData, CharGameData charGameData, List<CharChallenge> charChallenges) {
+        public AddToDatabaseParams(Context context, KeyboardData keyboardData, CharGameData charGameData, List<CharChallenge> charChallenges) {
             this.context = context;
             this.keyboardData = keyboardData;
             this.charGameData = charGameData;
@@ -127,10 +101,10 @@ public class CharGame extends Game {
         }
     }
 
-    private static class AddGameDataToDatabase extends AsyncTask<AddGameDataToDatabaseParams, Integer, Integer> {
+    private static class AddToDatabase extends AsyncTask<AddToDatabaseParams, Integer, Integer> {
         @Override
-        protected Integer doInBackground(AddGameDataToDatabaseParams... addGameDataToDatabaseParams) {
-            for (AddGameDataToDatabaseParams params : addGameDataToDatabaseParams) {
+        protected Integer doInBackground(AddToDatabaseParams... addToDatabaseParams) {
+            for (AddToDatabaseParams params : addToDatabaseParams) {
                 GamesDatabase db = GamesDatabase.getInstance(params.context);
                 KeyboardDao keyboardDao = db.keyboardDao();
                 CharGameDao gameDao = db.charGameDao();
@@ -163,6 +137,32 @@ public class CharGame extends Game {
             }
 
             return 1;
+        }
+    }
+
+    private void generateChars() {
+        for (CharType charType : gameCharTypes) {
+            for (char ch : charType.getAllChars()) {
+                if (!gameChars.contains(ch)) {
+                    gameChars.add(ch);
+                }
+            }
+        }
+    }
+
+    private char getRandomChar() {
+        int index = randGenerator.nextInt(gameChars.size());
+
+        return gameChars.get(index);
+    }
+
+    private CharChallenge getRandomChallenge() {
+        return new CharChallenge(new CharWithType(getRandomChar()));
+    }
+
+    private void generateChallenges(int challengesCount) {
+        for (int i = 0; i < challengesCount; i++) {
+            challenges.add(getRandomChallenge());
         }
     }
 }
