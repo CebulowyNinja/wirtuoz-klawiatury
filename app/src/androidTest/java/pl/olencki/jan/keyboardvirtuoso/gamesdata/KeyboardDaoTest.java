@@ -45,7 +45,7 @@ public class KeyboardDaoTest {
         KeyboardData keyboardById = keyboardDao.findById(keyboards.get(0).id);
         assertEquals(keyboards.get(0), keyboardById);
 
-        KeyboardData keyboardByClassName = keyboardDao.getByClassName(keyboards.get(0).className);
+        KeyboardData keyboardByClassName = keyboardDao.findByClassName(keyboards.get(0).className);
         assertEquals(keyboards.get(0), keyboardByClassName);
 
         keyboardDao.delete(keyboards.get(0));
@@ -56,7 +56,7 @@ public class KeyboardDaoTest {
     public void testMultipleInsertDelete() {
         List<KeyboardData> keyboardsSample = new ArrayList<>();
         keyboardsSample.add(new KeyboardData(null, "Test1", "com.keyboard.test1"));
-        keyboardsSample.add(new KeyboardData(null, "Test1", "com.keyboard.test1"));
+        keyboardsSample.add(new KeyboardData(null, "Test2", "com.keyboard.test2"));
 
         keyboardDao.insertMultiple(keyboardsSample);
         List<KeyboardData> keyboards = keyboardDao.findAll();

@@ -12,14 +12,14 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+                <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PhrasesModeActivity" />
-        <activity android:name=".CharsModeActivity" />
-        <activity android:name=".SettingsActivity" />
-        <activity android:name=".StatisticsActivity" />
+        <activity android:name=".CharGameActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".PhrasesModeActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".SettingsActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".StatisticsActivity" android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

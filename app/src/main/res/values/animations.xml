@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="animation_time_short">100</integer>
+    <integer name="animation_time_long">1500</integer>
+    <integer name="delay_new_char_challenge">500</integer>
+</resources>

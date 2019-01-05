@@ -7,14 +7,12 @@
     tools:context=".SettingsActivity">
 
     <TextView
-        android:id="@+id/text_setting_title"
+        android:id="@+id/text_settings_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="@dimen/margin_content_left"
+        android:layout_marginStart="@dimen/margin_content_left"
         android:layout_marginTop="@dimen/margin_small"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="@dimen/margin_content_right"
+        android:layout_marginEnd="@dimen/margin_content_right"
         android:text="@string/text_setting_title"
         android:textSize="@dimen/text_size_large"
         android:textStyle="bold"
@@ -22,17 +20,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
+    <Button
         android:id="@+id/btn_settings_return"
-        style="@style/Widget.AppCompat.ImageButton"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="@dimen/margin_extrasmall"
-        android:background="@android:color/transparent"
-        android:contentDescription="@string/btn_return_to_menu"
-        app:layout_constraintBottom_toBottomOf="@+id/text_setting_title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/text_setting_title"
-        app:srcCompat="?attr/actionModeCloseDrawable" />
+        android:layout_marginTop="8dp"
+        android:text="@string/btn_return"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </android.support.constraint.ConstraintLayout>

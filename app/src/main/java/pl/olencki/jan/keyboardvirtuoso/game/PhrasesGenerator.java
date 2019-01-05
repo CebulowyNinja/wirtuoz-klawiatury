@@ -9,11 +9,12 @@ public class PhrasesGenerator {
     private Random randGenerator = new Random();
 
     public PhrasesGenerator(String[] phrasesString) {
-        for(String phrase : phrasesString) {
+        for (String phrase : phrasesString) {
             phrases.add(new Phrase(phrase));
         }
     }
 
+    @SuppressWarnings("unchecked")
     public List<Phrase> getPhrases() {
         return (List<Phrase>) phrases.clone();
     }

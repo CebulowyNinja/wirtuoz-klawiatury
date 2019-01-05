@@ -1,17 +1,31 @@
 package pl.olencki.jan.keyboardvirtuoso.game;
 
+import android.content.Context;
+import android.os.AsyncTask;
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
-public class CharGame {
+import pl.olencki.jan.keyboardvirtuoso.game.exception.CharChallengeException;
+import pl.olencki.jan.keyboardvirtuoso.gamesdata.CharChallengeDao;
+import pl.olencki.jan.keyboardvirtuoso.gamesdata.CharChallengeData;
+import pl.olencki.jan.keyboardvirtuoso.gamesdata.CharGameDao;
+import pl.olencki.jan.keyboardvirtuoso.gamesdata.CharGameData;
+import pl.olencki.jan.keyboardvirtuoso.gamesdata.CharGameStatistics;
+import pl.olencki.jan.keyboardvirtuoso.gamesdata.GamesDatabase;
+import pl.olencki.jan.keyboardvirtuoso.gamesdata.KeyboardDao;
+import pl.olencki.jan.keyboardvirtuoso.gamesdata.KeyboardData;
+
+public class CharGame extends Game {
     private HashSet<CharType> gameCharTypes = new HashSet<>();
     private ArrayList<Character> gameChars = new ArrayList<>();
-
-    private ArrayList<CharChallenge> challenges = new ArrayList<>();
 
     private Random randGenerator = new Random();
 
@@ -22,18 +36,36 @@ public class CharGame {
         generateChallenges(challengesCount);
     }
 
-    public List<CharChallenge> getChallenges() {
-        return challenges;
-    }
-
     public Set<CharType> getGameCharTypes() {
         return gameCharTypes;
     }
 
-    public char getRandomChar() {
-        int index = randGenerator.nextInt(gameChars.size());
+    public List<CharGameStatistics> getGameStatistics() {
+        HashMap<CharType, CharGameStatistics> statisticsSet = new HashMap<>();
 
-        return gameChars.get(index);
+        for (Challenge challengeGeneric : challenges) {
+            CharChallenge challenge = (CharChallenge) challengeGeneric;
+            CharWithType character = challenge.getCharWithType();
+
+            CharGameStatistics statistics;
+
+            if (!statisticsSet.containsKey(character.getCharType())) {
+                statistics = new CharGameStatistics(character.getCharType());
+                statisticsSet.put(character.getCharType(), statistics);
+            } else {
+                statistics = statisticsSet.get(character.getCharType());
+            }
+
+            statistics.charsCount++;
+            statistics.elapsedTime += challenge.elapsedTime;
+
+            if (challenge.isCorrect()) {
+                statistics.correctCharsCount++;
+                statistics.elapsedTimeCorrect += challenge.elapsedTime;
+            }
+        }
+
+        return new ArrayList<CharGameStatistics>(statisticsSet.values());
     }
 
     private void generateChars() {
@@ -46,9 +78,91 @@ public class CharGame {
         }
     }
 
+    private char getRandomChar() {
+        int index = randGenerator.nextInt(gameChars.size());
+
+        return gameChars.get(index);
+    }
+
+    private CharChallenge getRandomChallenge() {
+        return new CharChallenge(new CharWithType(getRandomChar()));
+    }
+
     private void generateChallenges(int challengesCount) {
-        for(int i = 0; i < challengesCount; i++) {
-            challenges.add(new CharChallenge(new CharWithType(getRandomChar())));
+        for (int i = 0; i < challengesCount; i++) {
+            challenges.add(getRandomChallenge());
+        }
+    }
+
+    @Override
+    public void generateNewCurrentChallenge() {
+        challenges.set(currentChallengeIndex, getRandomChallenge());
+    }
+
+    @Override
+    public void addGameDataToDatabase(Context context, KeyboardData keyboard) {
+        CharGameData gameData = new CharGameData(null, 0, new Date());
+        List<CharChallenge> charChallenges = new ArrayList<>();
+        for (Challenge challenge : challenges) {
+            charChallenges.add((CharChallenge) challenge);
+        }
+
+        AddGameDataToDatabaseParams params = new AddGameDataToDatabaseParams(context, keyboard,
+                                                                             gameData,
+                                                                             charChallenges);
+        new AddGameDataToDatabase().execute(params);
+    }
+
+    private static class AddGameDataToDatabaseParams {
+        Context context;
+        KeyboardData keyboardData;
+        CharGameData charGameData;
+        List<CharChallenge> charChallenges;
+
+        public AddGameDataToDatabaseParams(Context context, KeyboardData keyboardData, CharGameData charGameData, List<CharChallenge> charChallenges) {
+            this.context = context;
+            this.keyboardData = keyboardData;
+            this.charGameData = charGameData;
+            this.charChallenges = charChallenges;
+        }
+    }
+
+    private static class AddGameDataToDatabase extends AsyncTask<AddGameDataToDatabaseParams, Integer, Integer> {
+        @Override
+        protected Integer doInBackground(AddGameDataToDatabaseParams... addGameDataToDatabaseParams) {
+            for (AddGameDataToDatabaseParams params : addGameDataToDatabaseParams) {
+                GamesDatabase db = GamesDatabase.getInstance(params.context);
+                KeyboardDao keyboardDao = db.keyboardDao();
+                CharGameDao gameDao = db.charGameDao();
+                CharChallengeDao challengeDao = db.charChallengeDao();
+
+                KeyboardData keyboardData = keyboardDao.findByClassName(
+                        params.keyboardData.className);
+                if (keyboardData == null) {
+                    keyboardData = params.keyboardData;
+                    keyboardData.id = keyboardDao.insert(keyboardData);
+                } else {
+                    keyboardData.name = params.keyboardData.name;
+                    keyboardDao.update(keyboardData);
+                }
+
+                CharGameData gameData = params.charGameData;
+                gameData.keyboardId = keyboardData.id;
+                gameData.id = gameDao.insert(params.charGameData);
+
+                List<CharChallengeData> challengesData = new ArrayList<>();
+                for (CharChallenge challenge : params.charChallenges) {
+                    try {
+                        challengesData.add(challenge.generateCharChallengeData(null, gameData.id));
+                    } catch (CharChallengeException e) {
+                        Log.e("Database", e.toString());
+                    }
+                }
+
+                challengeDao.insertMultiple(challengesData);
+            }
+
+            return 1;
         }
     }
 }

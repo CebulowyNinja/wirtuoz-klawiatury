@@ -15,12 +15,12 @@ import static android.arch.persistence.room.ForeignKey.CASCADE;
 
 @Entity(tableName = "CharChallenge",
         foreignKeys = {
-        @ForeignKey(entity = CharGameData.class,
-                    parentColumns = "id",
-                    childColumns = "gameId",
-                    onDelete = CASCADE,
-                    onUpdate = CASCADE)
-}, indices = {
+                @ForeignKey(entity = CharGameData.class,
+                            parentColumns = "id",
+                            childColumns = "gameId",
+                            onDelete = CASCADE,
+                            onUpdate = CASCADE)
+        }, indices = {
         @Index("gameId")
 })
 public class CharChallengeData {
@@ -74,6 +74,7 @@ public class CharChallengeData {
     @Override
     public int hashCode() {
 
-        return Objects.hash(id, gameId, charType, character, typedCharacter, isCorrect, elapsedTime);
+        return Objects.hash(id, gameId, charType, character, typedCharacter, isCorrect,
+                            elapsedTime);
     }
 }

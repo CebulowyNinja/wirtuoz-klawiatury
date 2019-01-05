@@ -3,8 +3,6 @@ package pl.olencki.jan.keyboardvirtuoso.gamesdata;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Query;
 
-import java.util.List;
-
 @Dao
 public interface PhraseGameStatisticsDao {
     @Query("SELECT COUNT(Challenge.id) as phrasesCount, SUM(Challenge.isCorrect) as correctPhrasesCount, " +

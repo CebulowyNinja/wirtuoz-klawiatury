@@ -1,12 +1,15 @@
 package pl.olencki.jan.keyboardvirtuoso.gamesdata;
 
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
 import java.util.Objects;
 
-@Entity(tableName = "keyboard")
+@Entity(tableName = "keyboard", indices = {
+        @Index(value = {"className"}, unique = true)
+})
 public class KeyboardData {
     @PrimaryKey(autoGenerate = true)
     public Long id;
@@ -36,5 +39,14 @@ public class KeyboardData {
     @Override
     public int hashCode() {
         return Objects.hash(id, name, className);
+    }
+
+    @Override
+    public String toString() {
+        return "KeyboardData{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", className='" + className + '\'' +
+                '}';
     }
 }

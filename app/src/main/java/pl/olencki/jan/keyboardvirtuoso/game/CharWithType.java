@@ -9,8 +9,8 @@ public class CharWithType {
     public CharWithType(char character) {
         this.character = character;
 
-        for(CharType charType : CharType.values()) {
-            if(charType.isContainsChar(character)) {
+        for (CharType charType : CharType.values()) {
+            if (charType.isContainsChar(character)) {
                 this.charType = charType;
             }
         }

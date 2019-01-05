@@ -7,8 +7,8 @@
     <string name="btn_settings">Ustawienia</string>
     <string name="btn_statistics">Statystyki</string>
     <string name="text_app_display_name">Wirtuoz klawiatury</string>
-    <string name="text_phrases_count">Fraza:</string>
-    <string name="text_chars_count">Znak:</string>
+    <string name="text_phrases_count_desc">Fraza:</string>
+    <string name="text_chars_count_desc">Znak:</string>
     <string name="btn_phrases_mode_start_normal">Rozpocznij grę</string>
     <string name="btn_restart_game">Zagraj ponownie</string>
     <string name="btn_return_to_menu">Wróć do menu</string>
@@ -16,4 +16,8 @@
     <string name="btn_exit_game">Zakończ grę</string>
     <string name="text_setting_title">Ustawienia</string>
     <string name="text_statistics_title">Statystyki</string>
+    <string name="btn_return">Wróć</string>
+    <string name="text_char_game_initial_desc">W trakcie rozgrywki masz za zadanie wpisać &lt;b>%1$d znaków&lt;/b>.&lt;br /> Pamiętaj o niezmienianiu klawiatury oraz niepoprawianiu znaków w trakcie rozgrywki.</string>
+    <string name="text_char_game_summary_count">Udało Ci się wpisać poprawnie %1$d na %2$d znaków w czasie %3$.2f sekund</string>
+    <string name="text_char_game_summary_speed">Osiągnąłeś szybkość %1$.1f znaków na minutę</string>
 </resources>

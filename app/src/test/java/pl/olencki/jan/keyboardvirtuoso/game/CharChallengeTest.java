@@ -22,9 +22,6 @@ public class CharChallengeTest {
         charChallenge.setTypedCharWithType(new CharWithType('b'));
         assertEquals(new CharWithType('b'), charChallenge.getTypedCharWithType());
         assertFalse(charChallenge.isCorrect());
-
-        charChallenge.setCharWithType(new CharWithType('b'));
-        assertTrue(charChallenge.isCorrect());
     }
 
     @Test
@@ -43,17 +40,10 @@ public class CharChallengeTest {
         } catch (CharChallengeException e) {
         }
 
-        charChallenge.setCharWithType(new CharWithType('a'));
+        charChallenge = new CharChallenge(new CharWithType('a'));
         try {
             charChallenge.generateCharChallengeData(null, 1);
             fail("Not throw on typedCharWithType = null");
-        } catch (CharChallengeException e) {
-        }
-
-        charChallenge.setTypedCharWithType(new CharWithType('~'));
-        try {
-            charChallenge.generateCharChallengeData(null, 1);
-            fail("Not throw on unknown charType");
         } catch (CharChallengeException e) {
         }
 

@@ -8,14 +8,14 @@ public class PhraseGameStatistics {
 
     public int totalLength;
     public int totalTypedLength;
-    public int elapsedTime;
+    public float elapsedTime;
 
     public int wordsCount;
     public int correctWordsCount;
     public int correctWordsDiacriticCount;
 
     public PhraseGameStatistics(int phrasesCount, int correctPhrasesCount, int totalLength, int totalTypedLength,
-                                int elapsedTime, int wordsCount, int correctWordsCount, int correctWordsDiacriticCount) {
+                                float elapsedTime, int wordsCount, int correctWordsCount, int correctWordsDiacriticCount) {
         this.phrasesCount = phrasesCount;
         this.correctPhrasesCount = correctPhrasesCount;
         this.totalLength = totalLength;

@@ -6,4 +6,8 @@
     <color name="modal_background">#edffffff</color>
     <color name="color_btn_primary">#d81b60</color>
     <color name="color_btn_secondary">#00574b</color>
+    <color name="color_gray_dark">#333333</color>
+    <color name="color_text_challenge_default">#333333</color>
+    <color name="color_text_challenge_correct">#0c7600</color>
+    <color name="color_text_challenge_incorrect">#d81b60</color>
 </resources>

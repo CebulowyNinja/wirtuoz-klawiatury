@@ -13,12 +13,12 @@ import static android.arch.persistence.room.ForeignKey.CASCADE;
 
 @Entity(tableName = "CharGame",
         foreignKeys = {
-        @ForeignKey(entity = KeyboardData.class,
-                    parentColumns = "id",
-                    childColumns = "keyboardId",
-                    onDelete = CASCADE,
-                    onUpdate = CASCADE)
-}, indices = {
+                @ForeignKey(entity = KeyboardData.class,
+                            parentColumns = "id",
+                            childColumns = "keyboardId",
+                            onDelete = CASCADE,
+                            onUpdate = CASCADE)
+        }, indices = {
         @Index("keyboardId")
 })
 public class CharGameData {

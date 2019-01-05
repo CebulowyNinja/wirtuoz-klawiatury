@@ -4,6 +4,7 @@ import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
+import android.arch.persistence.room.Update;
 
 import java.util.List;
 
@@ -16,13 +17,16 @@ public interface KeyboardDao {
     KeyboardData findById(long keyboardId);
 
     @Query("SELECT * FROM keyboard WHERE className = :className")
-    KeyboardData getByClassName(String className);
+    KeyboardData findByClassName(String className);
 
     @Insert
     long insert(KeyboardData keyboard);
 
     @Insert
     long[] insertMultiple(List<KeyboardData> keyboards);
+
+    @Update
+    int update(KeyboardData keyboard);
 
     @Delete
     int delete(KeyboardData keyboard);

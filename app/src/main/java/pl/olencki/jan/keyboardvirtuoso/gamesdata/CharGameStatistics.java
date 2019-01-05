@@ -1,5 +1,7 @@
 package pl.olencki.jan.keyboardvirtuoso.gamesdata;
 
+import android.arch.persistence.room.Ignore;
+
 import java.util.Objects;
 
 import pl.olencki.jan.keyboardvirtuoso.game.CharType;
@@ -10,10 +12,15 @@ public class CharGameStatistics {
     public int charsCount;
     public int correctCharsCount;
 
-    public int elapsedTime;
-    public int elapsedTimeCorrect;
+    public float elapsedTime;
+    public float elapsedTimeCorrect;
 
-    public CharGameStatistics(CharType charType, int charsCount, int correctCharsCount, int elapsedTime, int elapsedTimeCorrect) {
+    @Ignore
+    public CharGameStatistics(CharType charType) {
+        this(charType, 0, 0, 0, 0);
+    }
+
+    public CharGameStatistics(CharType charType, int charsCount, int correctCharsCount, float elapsedTime, float elapsedTimeCorrect) {
         this.charType = charType;
         this.charsCount = charsCount;
         this.correctCharsCount = correctCharsCount;
