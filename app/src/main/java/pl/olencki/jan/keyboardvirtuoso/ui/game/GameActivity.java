@@ -1,4 +1,4 @@
-package pl.olencki.jan.keyboardvirtuoso.ui;
+package pl.olencki.jan.keyboardvirtuoso.ui.game;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -23,11 +23,13 @@ import android.widget.TextView;
 import java.util.List;
 
 import pl.olencki.jan.keyboardvirtuoso.*;
+import pl.olencki.jan.keyboardvirtuoso.app.AppActivity;
 import pl.olencki.jan.keyboardvirtuoso.game.*;
 import pl.olencki.jan.keyboardvirtuoso.game.exception.*;
 import pl.olencki.jan.keyboardvirtuoso.gamesdata.*;
+import pl.olencki.jan.keyboardvirtuoso.ui.StatisticsActivity;
 
-import static pl.olencki.jan.keyboardvirtuoso.ui.GameStage.*;
+import static pl.olencki.jan.keyboardvirtuoso.ui.game.GameStage.*;
 
 public abstract class GameActivity extends AppActivity {
     protected GameStage gameStage;

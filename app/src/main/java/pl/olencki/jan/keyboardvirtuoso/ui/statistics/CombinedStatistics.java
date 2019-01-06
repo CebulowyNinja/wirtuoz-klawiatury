@@ -1,4 +1,4 @@
-package pl.olencki.jan.keyboardvirtuoso.ui;
+package pl.olencki.jan.keyboardvirtuoso.ui.statistics;
 
 import java.util.List;
 

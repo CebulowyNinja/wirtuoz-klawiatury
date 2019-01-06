@@ -13,6 +13,7 @@ import android.widget.TextView;
 import pl.olencki.jan.keyboardvirtuoso.*;
 import pl.olencki.jan.keyboardvirtuoso.game.*;
 import pl.olencki.jan.keyboardvirtuoso.gamesdata.*;
+import pl.olencki.jan.keyboardvirtuoso.ui.game.GameActivity;
 
 public class PhraseGameActivity extends GameActivity {
 

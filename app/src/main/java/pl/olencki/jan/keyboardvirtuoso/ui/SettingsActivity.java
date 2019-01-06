@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import pl.olencki.jan.keyboardvirtuoso.*;
+import pl.olencki.jan.keyboardvirtuoso.app.AppActivity;
 
 public class SettingsActivity extends AppActivity {
     private EditText editTextPhrasesCount;

@@ -12,8 +12,9 @@ import java.util.List;
 import pl.olencki.jan.keyboardvirtuoso.*;
 import pl.olencki.jan.keyboardvirtuoso.game.*;
 import pl.olencki.jan.keyboardvirtuoso.gamesdata.*;
+import pl.olencki.jan.keyboardvirtuoso.ui.game.GameActivity;
 
-import static pl.olencki.jan.keyboardvirtuoso.ui.GameStage.*;
+import static pl.olencki.jan.keyboardvirtuoso.ui.game.GameStage.*;
 
 public class CharGameActivity extends GameActivity {
 

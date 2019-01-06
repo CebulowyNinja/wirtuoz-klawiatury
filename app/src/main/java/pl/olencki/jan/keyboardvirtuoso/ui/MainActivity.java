@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 
 import pl.olencki.jan.keyboardvirtuoso.R;
+import pl.olencki.jan.keyboardvirtuoso.app.AppActivity;
 
 public class MainActivity extends AppActivity {
     @Override

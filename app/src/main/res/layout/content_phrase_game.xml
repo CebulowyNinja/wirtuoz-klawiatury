@@ -32,7 +32,7 @@
 
     <view
         android:id="@+id/edit_text_game_input"
-        class="pl.olencki.jan.keyboardvirtuoso.ui.GameEditText"
+        class="pl.olencki.jan.keyboardvirtuoso.ui.game.GameEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_content_left"

@@ -1,4 +1,4 @@
-package pl.olencki.jan.keyboardvirtuoso.ui;
+package pl.olencki.jan.keyboardvirtuoso.app;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,9 +6,10 @@ import android.support.annotation.CallSuper;
 import android.support.v7.app.AppCompatActivity;
 
 import pl.olencki.jan.keyboardvirtuoso.app.*;
+import pl.olencki.jan.keyboardvirtuoso.ui.MainActivity;
 
 public abstract class AppActivity extends AppCompatActivity {
-    AppPreferences appPreferences;
+    protected AppPreferences appPreferences;
 
     @CallSuper
     @Override
