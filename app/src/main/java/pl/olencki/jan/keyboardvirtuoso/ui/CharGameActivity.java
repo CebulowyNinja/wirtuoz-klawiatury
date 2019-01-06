@@ -1,4 +1,4 @@
-package pl.olencki.jan.keyboardvirtuoso;
+package pl.olencki.jan.keyboardvirtuoso.ui;
 
 import android.content.Context;
 import android.os.Build;
@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import pl.olencki.jan.keyboardvirtuoso.R;
 import pl.olencki.jan.keyboardvirtuoso.game.CharChallenge;
 import pl.olencki.jan.keyboardvirtuoso.game.CharGame;
 import pl.olencki.jan.keyboardvirtuoso.game.CharType;
@@ -22,8 +23,8 @@ import pl.olencki.jan.keyboardvirtuoso.game.CharWithType;
 import pl.olencki.jan.keyboardvirtuoso.gamesdata.CharGameStatistics;
 import pl.olencki.jan.keyboardvirtuoso.gamesdata.KeyboardData;
 
-import static pl.olencki.jan.keyboardvirtuoso.GameStage.CHALLENGE;
-import static pl.olencki.jan.keyboardvirtuoso.GameStage.CHALLENGE_CORRECT;
+import static pl.olencki.jan.keyboardvirtuoso.ui.GameStage.CHALLENGE;
+import static pl.olencki.jan.keyboardvirtuoso.ui.GameStage.CHALLENGE_CORRECT;
 
 public class CharGameActivity extends GameActivity {
     private TextView textViewChallenge;

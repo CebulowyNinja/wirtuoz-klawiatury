@@ -2,6 +2,7 @@ package pl.olencki.jan.keyboardvirtuoso.game;
 
 import pl.olencki.jan.keyboardvirtuoso.game.exception.PhraseChallengeException;
 import pl.olencki.jan.keyboardvirtuoso.gamesdata.PhraseChallengeData;
+import pl.olencki.jan.keyboardvirtuoso.gamesdata.PhraseGameStatistics;
 
 public class PhraseChallenge extends Challenge {
     private Phrase phrase;
@@ -28,15 +29,6 @@ public class PhraseChallenge extends Challenge {
         return phrase.equals(typedPhrase);
     }
 
-    @Override
-    public String getText() {
-        return phrase.getText();
-    }
-
-    @Override
-    public String getTypedText() {
-        return typedPhrase.getText();
-    }
 
     public boolean[] areWordsCorrect() {
         String[] words = phrase.getWords();
@@ -71,6 +63,24 @@ public class PhraseChallenge extends Challenge {
         return areCorrect;
     }
 
+    public PhraseGameStatistics generatePhraseGameStatistics() {
+        PhraseGameStatistics stats = new PhraseGameStatistics();
+
+        stats.phrasesCount = 1;
+        stats.correctPhrasesCount = isCorrect() ? 1 : 0;
+
+        stats.totalLength = phrase.getText().length();
+        stats.totalTypedLength = typedPhrase.getText().length();
+        stats.elapsedTime = elapsedTime;
+
+        stats.wordsCount = phrase.getWords().length;
+        stats.wordsDiacriticCount = phrase.getWordsDiacritic().length;
+        stats.correctWordsCount = correctWordsCount();
+        stats.correctWordsDiacriticCount = correctWordsDiacriticCount();
+
+        return stats;
+    }
+
     public PhraseChallengeData generatePhraseChallengeData(Long id, long gameId) throws PhraseChallengeException {
         final String exceptionMsg = "Unable to create CharChallengeData object: ";
         PhraseChallengeData data;
@@ -85,7 +95,7 @@ public class PhraseChallenge extends Challenge {
 
         data = new PhraseChallengeData(id, gameId, phrase.getText(), phrase.getText().length(),
                                        phrase.getWords().length,
-                                       phrase.getWordsWithDiacritics().length);
+                                       phrase.getWordsDiacritic().length);
 
         data.isCorrect = isCorrect();
 

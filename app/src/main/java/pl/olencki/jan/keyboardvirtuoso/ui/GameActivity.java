@@ -1,4 +1,4 @@
-package pl.olencki.jan.keyboardvirtuoso;
+package pl.olencki.jan.keyboardvirtuoso.ui;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -11,22 +11,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import pl.olencki.jan.keyboardvirtuoso.R;
 import pl.olencki.jan.keyboardvirtuoso.game.Game;
 import pl.olencki.jan.keyboardvirtuoso.game.exception.ChallengeTimerException;
 
-import static pl.olencki.jan.keyboardvirtuoso.GameStage.CHALLENGE;
-import static pl.olencki.jan.keyboardvirtuoso.GameStage.CHALLENGE_CORRECT;
-import static pl.olencki.jan.keyboardvirtuoso.GameStage.CHALLENGE_INCORRECT;
-import static pl.olencki.jan.keyboardvirtuoso.GameStage.INITIAL_STAGE;
-import static pl.olencki.jan.keyboardvirtuoso.GameStage.SUMMARY;
-
-enum GameStage {
-    INITIAL_STAGE,
-    CHALLENGE,
-    CHALLENGE_CORRECT,
-    CHALLENGE_INCORRECT,
-    SUMMARY
-}
+import static pl.olencki.jan.keyboardvirtuoso.ui.GameStage.CHALLENGE;
+import static pl.olencki.jan.keyboardvirtuoso.ui.GameStage.CHALLENGE_CORRECT;
+import static pl.olencki.jan.keyboardvirtuoso.ui.GameStage.CHALLENGE_INCORRECT;
+import static pl.olencki.jan.keyboardvirtuoso.ui.GameStage.INITIAL_STAGE;
+import static pl.olencki.jan.keyboardvirtuoso.ui.GameStage.SUMMARY;
 
 public abstract class GameActivity extends AppCompatActivity {
     protected GameStage gameStage;

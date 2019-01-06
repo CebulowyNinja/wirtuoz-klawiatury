@@ -1,4 +1,4 @@
-package pl.olencki.jan.keyboardvirtuoso.game;
+package pl.olencki.jan.keyboardvirtuoso.ui;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

@@ -1,4 +1,4 @@
-package pl.olencki.jan.keyboardvirtuoso;
+package pl.olencki.jan.keyboardvirtuoso.ui;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -10,6 +10,7 @@ import android.widget.Button;
 
 import java.util.List;
 
+import pl.olencki.jan.keyboardvirtuoso.R;
 import pl.olencki.jan.keyboardvirtuoso.gamesdata.CharGameStatistics;
 import pl.olencki.jan.keyboardvirtuoso.gamesdata.CharGameStatisticsDao;
 import pl.olencki.jan.keyboardvirtuoso.gamesdata.GamesDatabase;

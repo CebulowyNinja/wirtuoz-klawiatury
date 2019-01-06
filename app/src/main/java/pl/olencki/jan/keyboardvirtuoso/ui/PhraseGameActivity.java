@@ -1,4 +1,4 @@
-package pl.olencki.jan.keyboardvirtuoso;
+package pl.olencki.jan.keyboardvirtuoso.ui;
 
 import android.content.Context;
 import android.os.Build;
@@ -20,13 +20,14 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import pl.olencki.jan.keyboardvirtuoso.R;
 import pl.olencki.jan.keyboardvirtuoso.game.Phrase;
 import pl.olencki.jan.keyboardvirtuoso.game.PhraseChallenge;
 import pl.olencki.jan.keyboardvirtuoso.game.PhraseGame;
 import pl.olencki.jan.keyboardvirtuoso.gamesdata.KeyboardData;
 import pl.olencki.jan.keyboardvirtuoso.gamesdata.PhraseGameStatistics;
 
-import static pl.olencki.jan.keyboardvirtuoso.GameStage.CHALLENGE;
+import static pl.olencki.jan.keyboardvirtuoso.ui.GameStage.CHALLENGE;
 
 public class PhraseGameActivity extends GameActivity {
     private TextView textViewChallenge;

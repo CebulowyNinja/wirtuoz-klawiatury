@@ -31,8 +31,4 @@ public abstract class Challenge {
     }
 
     public abstract boolean isCorrect();
-
-    public abstract String getText();
-
-    public abstract String getTypedText();
 }

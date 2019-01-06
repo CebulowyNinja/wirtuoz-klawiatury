@@ -28,6 +28,29 @@ public class CharGameStatistics {
         this.elapsedTimeCorrect = elapsedTimeCorrect;
     }
 
+    @Ignore
+    public float getCharsPerMinute() {
+        if(elapsedTime == 0) {
+            return 0;
+        }
+        return charsCount/elapsedTime*60;
+    }
+
+    @Ignore
+    public CharGameStatistics sumStatistics(CharGameStatistics stats) {
+        CharGameStatistics totalStats = new CharGameStatistics(null);
+        if(charType == stats.charType) {
+            totalStats.charType = charType;
+        }
+
+        totalStats.charsCount = charsCount + stats.charsCount;
+        totalStats.correctCharsCount = correctCharsCount + stats.correctCharsCount;
+        totalStats.elapsedTime = elapsedTime + stats.elapsedTime;
+        totalStats.elapsedTimeCorrect = elapsedTimeCorrect + stats.elapsedTimeCorrect;
+
+        return totalStats;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

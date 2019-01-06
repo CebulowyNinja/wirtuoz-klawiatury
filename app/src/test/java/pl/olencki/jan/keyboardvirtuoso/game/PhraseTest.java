@@ -50,7 +50,6 @@ public class PhraseTest {
 
         Phrase challengePhrase = new Phrase(phrase);
 
-        assertEquals(challengePhrase.getDiacriticCharsCount(), 2);
-        assertArrayEquals(challengePhrase.getWordsWithDiacritics(), wordsWithDiacritics);
+        assertArrayEquals(challengePhrase.getWordsDiacritic(), wordsWithDiacritics);
     }
 }

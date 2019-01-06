@@ -2,6 +2,7 @@ package pl.olencki.jan.keyboardvirtuoso.game;
 
 import pl.olencki.jan.keyboardvirtuoso.game.exception.CharChallengeException;
 import pl.olencki.jan.keyboardvirtuoso.gamesdata.CharChallengeData;
+import pl.olencki.jan.keyboardvirtuoso.gamesdata.CharGameStatistics;
 
 public class CharChallenge extends Challenge {
     private CharWithType charWithType;
@@ -28,18 +29,15 @@ public class CharChallenge extends Challenge {
         return charWithType.equals(typedCharWithType);
     }
 
-    @Override
-    public String getText() {
-        return Character.toString(charWithType.getChar());
-    }
+    public CharGameStatistics generateCharGameStatistics() {
+        CharGameStatistics stats = new CharGameStatistics(charWithType.getCharType());
 
-    @Override
-    public String getTypedText() {
-        if (typedCharWithType == null) {
-            return null;
-        }
+        stats.charsCount = 1;
+        stats.correctCharsCount = isCorrect() ? 1 : 0;
+        stats.elapsedTime = elapsedTime;
+        stats.elapsedTimeCorrect = isCorrect() ? elapsedTime : 0;
 
-        return Character.toString(typedCharWithType.getChar());
+        return stats;
     }
 
     public CharChallengeData generateCharChallengeData(Long id, long gameId) throws CharChallengeException {

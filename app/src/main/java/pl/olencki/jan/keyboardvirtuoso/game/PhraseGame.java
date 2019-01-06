@@ -30,32 +30,19 @@ public class PhraseGame extends Game {
         generateChallenges(challengesCount);
     }
 
+    public PhraseChallenge getRandomChallenge() {
+        return new PhraseChallenge(getRandomPhrase());
+    }
+
     public PhraseGameStatistics getGameStatistics() {
-        PhraseGameStatistics statistics = new PhraseGameStatistics();
-        statistics.phrasesCount = challenges.size();
+        PhraseGameStatistics totalStats = new PhraseGameStatistics();
 
         for (Challenge challengeGeneric : challenges) {
             PhraseChallenge challenge = (PhraseChallenge) challengeGeneric;
-
-            if (challenge.isCorrect()) {
-                statistics.correctPhrasesCount++;
-            }
-
-            statistics.totalLength += challenge.getPhrase().getText().length();
-            statistics.totalTypedLength += challenge.getTypedPhrase().getText().length();
-            statistics.elapsedTime += challenge.elapsedTime;
-            statistics.wordsCount += challenge.getPhrase().getWords().length;
-            statistics.wordsDiacriticCount += challenge.getPhrase().getWordsWithDiacritics().length;
-            statistics.correctWordsCount += challenge.correctWordsCount();
-            statistics.correctWordsDiacriticCount += challenge.correctWordsDiacriticCount();
+            totalStats = totalStats.sumStatistics(challenge.generatePhraseGameStatistics());
         }
 
-        return statistics;
-    }
-
-    @Override
-    public void generateNewCurrentChallenge() {
-        challenges.set(currentChallengeIndex, getRandomChallenge());
+        return totalStats;
     }
 
     @Override
@@ -77,16 +64,12 @@ public class PhraseGame extends Game {
         return new Phrase(phrasesString[index]);
     }
 
-    private PhraseChallenge getRandomChallenge() {
-        return new PhraseChallenge(getRandomPhrase());
-    }
 
     private void generateChallenges(int challengesCount) {
         for (int i = 0; i < challengesCount; i++) {
             challenges.add(getRandomChallenge());
         }
     }
-
 
     private static class AddToDatabaseParams {
         Context context;

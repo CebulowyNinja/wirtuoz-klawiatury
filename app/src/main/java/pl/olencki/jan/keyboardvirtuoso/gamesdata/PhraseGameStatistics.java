@@ -1,6 +1,7 @@
 package pl.olencki.jan.keyboardvirtuoso.gamesdata;
 
 import android.arch.persistence.room.Ignore;
+import android.util.Log;
 
 import java.util.Objects;
 
@@ -41,6 +42,23 @@ public class PhraseGameStatistics {
         }
 
         return (totalLength - phrasesCount)/elapsedTime*60/5;
+    }
+
+    @Ignore
+    public PhraseGameStatistics sumStatistics(PhraseGameStatistics stats) {
+        PhraseGameStatistics totalStats = new PhraseGameStatistics();
+
+        totalStats.phrasesCount = phrasesCount + stats.phrasesCount;
+        totalStats.correctPhrasesCount = correctPhrasesCount + stats.correctPhrasesCount;
+        totalStats.totalLength = totalLength + stats.totalLength;
+        totalStats.totalTypedLength = totalTypedLength + stats.totalTypedLength;
+        totalStats.elapsedTime = elapsedTime + stats.elapsedTime;
+        totalStats.wordsCount = wordsCount + stats.wordsCount;
+        totalStats.wordsDiacriticCount = wordsDiacriticCount + stats.wordsDiacriticCount;
+        totalStats.correctWordsCount = correctWordsCount + stats.correctWordsCount;
+        totalStats.correctWordsDiacriticCount = correctWordsDiacriticCount + stats.correctWordsDiacriticCount;
+
+        return totalStats;
     }
 
     @Override

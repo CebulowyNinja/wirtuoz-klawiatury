@@ -41,7 +41,11 @@ public abstract class Game {
         return getCurrentChallenge();
     }
 
-    abstract public void generateNewCurrentChallenge();
+    public void generateNewCurrentChallenge() {
+        challenges.set(currentChallengeIndex, getRandomChallenge());
+    }
+
+    abstract public Challenge getRandomChallenge();
 
     abstract public void addToDatabase(Context context, KeyboardData keyboard);
 }

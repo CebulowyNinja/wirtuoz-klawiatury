@@ -32,7 +32,7 @@ public class Phrase {
         return phrase.split("\\s+");
     }
 
-    public String[] getWordsWithDiacritics() {
+    public String[] getWordsDiacritic() {
         ArrayList<String> withDiacritic = new ArrayList<>();
 
         for (String word : getWords()) {
@@ -43,10 +43,6 @@ public class Phrase {
 
         String[] withDiacriticArray = new String[withDiacritic.size()];
         return withDiacritic.toArray(withDiacriticArray);
-    }
-
-    public int getDiacriticCharsCount() {
-        return countDiacriticChars(phrase);
     }
 
     @Override

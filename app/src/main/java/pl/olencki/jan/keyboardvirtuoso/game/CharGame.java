@@ -40,37 +40,28 @@ public class CharGame extends Game {
         return gameCharTypes;
     }
 
+    public CharChallenge getRandomChallenge() {
+        return new CharChallenge(new CharWithType(getRandomChar()));
+    }
+
     public List<CharGameStatistics> getGameStatistics() {
         HashMap<CharType, CharGameStatistics> statisticsSet = new HashMap<>();
 
         for (Challenge challengeGeneric : challenges) {
             CharChallenge challenge = (CharChallenge) challengeGeneric;
-            CharWithType character = challenge.getCharWithType();
+            CharType charType = challenge.getCharWithType().getCharType();
 
-            CharGameStatistics statistics;
-
-            if (!statisticsSet.containsKey(character.getCharType())) {
-                statistics = new CharGameStatistics(character.getCharType());
-                statisticsSet.put(character.getCharType(), statistics);
+            if (!statisticsSet.containsKey(charType)) {
+                statisticsSet.put(charType, challenge.generateCharGameStatistics());
             } else {
-                statistics = statisticsSet.get(character.getCharType());
+                CharGameStatistics stats = statisticsSet.get(charType);
+                stats = stats.sumStatistics(challenge.generateCharGameStatistics());
+                statisticsSet.put(charType, stats);
             }
 
-            statistics.charsCount++;
-            statistics.elapsedTime += challenge.elapsedTime;
-
-            if (challenge.isCorrect()) {
-                statistics.correctCharsCount++;
-                statistics.elapsedTimeCorrect += challenge.elapsedTime;
-            }
         }
 
         return new ArrayList<CharGameStatistics>(statisticsSet.values());
-    }
-
-    @Override
-    public void generateNewCurrentChallenge() {
-        challenges.set(currentChallengeIndex, getRandomChallenge());
     }
 
     @Override
@@ -103,9 +94,6 @@ public class CharGame extends Game {
         return gameChars.get(index);
     }
 
-    private CharChallenge getRandomChallenge() {
-        return new CharChallenge(new CharWithType(getRandomChar()));
-    }
 
     private void generateChallenges(int challengesCount) {
         for (int i = 0; i < challengesCount; i++) {
