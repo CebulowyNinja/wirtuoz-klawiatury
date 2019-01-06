@@ -1,12 +1,12 @@
-package pl.olencki.jan.keyboardvirtuoso.gamesdata;
+package pl.olencki.jan.keyboardvirtuoso.database;
 
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.arch.persistence.room.TypeConverters;
 import android.content.Context;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.converters.*;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.entities.*;
+import pl.olencki.jan.keyboardvirtuoso.database.converters.*;
+import pl.olencki.jan.keyboardvirtuoso.database.entities.*;
 
 @Database(version = 1,
         entities = {

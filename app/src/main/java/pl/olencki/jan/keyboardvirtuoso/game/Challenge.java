@@ -1,8 +1,8 @@
 package pl.olencki.jan.keyboardvirtuoso.game;
 
-import java.util.Date;
-
 import pl.olencki.jan.keyboardvirtuoso.game.exception.*;
+
+import java.util.Date;
 
 public abstract class Challenge {
     protected float elapsedTime;

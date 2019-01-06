@@ -4,9 +4,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
 import pl.olencki.jan.keyboardvirtuoso.*;
-import pl.olencki.jan.keyboardvirtuoso.app.AppActivity;
+import pl.olencki.jan.keyboardvirtuoso.app.*;
 
 public class SettingsActivity extends AppActivity {
     private EditText editTextPhrasesCount;
@@ -53,7 +52,7 @@ public class SettingsActivity extends AppActivity {
                 if (!hasFocus) {
                     EditText editText = (EditText) view;
                     int value = Integer.parseInt(editText.getText().toString());
-                    value = appPreferences.validateCharseCountSingleGame(value);
+                    value = appPreferences.validateCharsCountSingleGame(value);
 
                     editText.setText(String.valueOf(value));
                 }

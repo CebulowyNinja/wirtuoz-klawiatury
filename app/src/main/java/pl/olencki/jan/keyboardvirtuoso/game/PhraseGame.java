@@ -3,15 +3,14 @@ package pl.olencki.jan.keyboardvirtuoso.game;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
+import pl.olencki.jan.keyboardvirtuoso.database.*;
+import pl.olencki.jan.keyboardvirtuoso.database.entities.*;
+import pl.olencki.jan.keyboardvirtuoso.game.exception.*;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
-
-import pl.olencki.jan.keyboardvirtuoso.game.exception.*;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.*;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.entities.*;
 
 public class PhraseGame extends Game {
     private String[] phrasesString;
@@ -48,7 +47,7 @@ public class PhraseGame extends Game {
         }
 
         AddToDatabaseParams params = new AddToDatabaseParams(context, keyboard,
-                                                             gameData, phraseChallenges);
+                gameData, phraseChallenges);
         new AddToDatabase().execute(params);
     }
 

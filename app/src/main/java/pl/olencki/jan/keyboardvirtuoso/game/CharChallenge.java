@@ -1,7 +1,7 @@
 package pl.olencki.jan.keyboardvirtuoso.game;
 
+import pl.olencki.jan.keyboardvirtuoso.database.entities.*;
 import pl.olencki.jan.keyboardvirtuoso.game.exception.*;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.entities.*;
 
 public class CharChallenge extends Challenge {
     private CharWithType charWithType;
@@ -56,7 +56,7 @@ public class CharChallenge extends Challenge {
         }
 
         data = new CharChallengeData(id, gameId,
-                                     charWithType.getCharType(), charWithType.getChar());
+                charWithType.getCharType(), charWithType.getChar());
         data.isCorrect = isCorrect();
         data.typedCharacter = typedCharWithType.getChar();
         data.elapsedTime = elapsedTime;

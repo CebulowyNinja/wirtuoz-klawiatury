@@ -1,7 +1,7 @@
-package pl.olencki.jan.keyboardvirtuoso.gamesdata;
+package pl.olencki.jan.keyboardvirtuoso.database;
 
 import android.arch.persistence.room.*;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.entities.*;
+import pl.olencki.jan.keyboardvirtuoso.database.entities.*;
 
 import java.util.List;
 

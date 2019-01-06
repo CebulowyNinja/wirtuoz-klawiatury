@@ -58,11 +58,4 @@ public class Phrase {
 
         return Objects.hash(phrase);
     }
-
-    @Override
-    public String toString() {
-        return "Phrase{" +
-                "phrase='" + phrase + '\'' +
-                '}';
-    }
 }

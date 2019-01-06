@@ -1,4 +1,4 @@
-package pl.olencki.jan.keyboardvirtuoso.gamesdata;
+package pl.olencki.jan.keyboardvirtuoso.database;
 
 import android.arch.persistence.room.Room;
 import android.content.Context;
@@ -13,7 +13,7 @@ import java.util.Date;
 import java.util.List;
 
 import pl.olencki.jan.keyboardvirtuoso.game.CharType;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.entities.*;
+import pl.olencki.jan.keyboardvirtuoso.database.entities.*;
 
 import static org.junit.Assert.assertTrue;
 

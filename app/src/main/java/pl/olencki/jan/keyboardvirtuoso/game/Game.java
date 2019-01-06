@@ -1,11 +1,10 @@
 package pl.olencki.jan.keyboardvirtuoso.game;
 
 import android.content.Context;
+import pl.olencki.jan.keyboardvirtuoso.database.entities.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.entities.*;
 
 public abstract class Game {
     protected ArrayList<Challenge> challenges = new ArrayList<>();

@@ -3,7 +3,7 @@ package pl.olencki.jan.keyboardvirtuoso.game;
 import org.junit.Test;
 
 import pl.olencki.jan.keyboardvirtuoso.game.exception.PhraseChallengeException;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.entities.PhraseChallengeData;
+import pl.olencki.jan.keyboardvirtuoso.database.entities.PhraseChallengeData;
 
 import static org.junit.Assert.*;
 

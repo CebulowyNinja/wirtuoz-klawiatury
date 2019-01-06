@@ -1,4 +1,4 @@
-package pl.olencki.jan.keyboardvirtuoso.gamesdata.converters;
+package pl.olencki.jan.keyboardvirtuoso.database.converters;
 
 import android.arch.persistence.room.TypeConverter;
 

@@ -11,8 +11,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import pl.olencki.jan.keyboardvirtuoso.*;
+import pl.olencki.jan.keyboardvirtuoso.database.entities.*;
 import pl.olencki.jan.keyboardvirtuoso.game.*;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.entities.*;
 
 public class CombinedStatisticsAdapter extends ArrayAdapter<CombinedStatistics> {
     public CombinedStatisticsAdapter(@NonNull Context context, int resource) {
@@ -100,7 +100,6 @@ public class CombinedStatisticsAdapter extends ArrayAdapter<CombinedStatistics> 
         }
         textView.setVisibility(View.GONE);
     }
-
 
 }
 

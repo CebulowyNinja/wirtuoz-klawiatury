@@ -1,4 +1,4 @@
-package pl.olencki.jan.keyboardvirtuoso.gamesdata.entities;
+package pl.olencki.jan.keyboardvirtuoso.database.entities;
 
 import android.arch.persistence.room.Ignore;
 import pl.olencki.jan.keyboardvirtuoso.game.*;
@@ -6,7 +6,7 @@ import pl.olencki.jan.keyboardvirtuoso.game.*;
 import java.util.Objects;
 
 /**
- * Entity class with generated or loaded statistics data of char game
+ * Model class with generated or loaded statistics data of char game
  */
 public class CharGameStatistics {
     public CharType charType;
@@ -41,7 +41,7 @@ public class CharGameStatistics {
 
     /**
      * Returns new statistics object with combined data from argument and this object
-     * @param stats
+     *
      * @return new CharGameStatistics object
      */
     @Ignore

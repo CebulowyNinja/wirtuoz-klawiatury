@@ -6,13 +6,12 @@ import android.text.Html;
 import android.text.Spanned;
 import android.text.TextWatcher;
 import android.widget.TextView;
+import pl.olencki.jan.keyboardvirtuoso.*;
+import pl.olencki.jan.keyboardvirtuoso.database.entities.*;
+import pl.olencki.jan.keyboardvirtuoso.game.*;
+import pl.olencki.jan.keyboardvirtuoso.ui.game.*;
 
 import java.util.List;
-
-import pl.olencki.jan.keyboardvirtuoso.*;
-import pl.olencki.jan.keyboardvirtuoso.game.*;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.entities.*;
-import pl.olencki.jan.keyboardvirtuoso.ui.game.GameActivity;
 
 import static pl.olencki.jan.keyboardvirtuoso.ui.game.GameStage.*;
 
@@ -93,7 +92,7 @@ public class CharGameActivity extends GameActivity {
         TextView textViewSummary = findViewById(R.id.text_game_summary);
 
         String summaryText = getString(R.string.text_char_game_summary_count, correctCharsCount,
-                                       charsCount, ellapsedTime);
+                charsCount, ellapsedTime);
         String summarySpeedText = getString(R.string.text_char_game_summary_speed, speed);
 
         textViewSummaryTop.setText(summarySpeedText);

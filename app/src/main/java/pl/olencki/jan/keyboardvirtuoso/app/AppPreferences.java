@@ -34,13 +34,13 @@ public class AppPreferences {
     }
 
     public void setCharsCountSingleGame(int value) {
-        value = validateCharseCountSingleGame(value);
+        value = validateCharsCountSingleGame(value);
 
         SharedPreferences.Editor editor = preferences.edit();
         editor.putInt("chars_count_single_game", value).apply();
     }
 
-    public int validateCharseCountSingleGame(int value) {
+    public int validateCharsCountSingleGame(int value) {
         if (value < 1 || value > 100) {
             return 10;
         }

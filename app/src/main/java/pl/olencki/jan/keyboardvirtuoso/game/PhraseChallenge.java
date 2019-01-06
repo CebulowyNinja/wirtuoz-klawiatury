@@ -1,7 +1,7 @@
 package pl.olencki.jan.keyboardvirtuoso.game;
 
+import pl.olencki.jan.keyboardvirtuoso.database.entities.*;
 import pl.olencki.jan.keyboardvirtuoso.game.exception.*;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.entities.*;
 
 public class PhraseChallenge extends Challenge {
     private Phrase phrase;
@@ -93,8 +93,8 @@ public class PhraseChallenge extends Challenge {
         }
 
         data = new PhraseChallengeData(id, gameId, phrase.getText(), phrase.getText().length(),
-                                       phrase.getWords().length,
-                                       phrase.getWordsDiacritic().length);
+                phrase.getWords().length,
+                phrase.getWordsDiacritic().length);
 
         data.isCorrect = isCorrect();
 

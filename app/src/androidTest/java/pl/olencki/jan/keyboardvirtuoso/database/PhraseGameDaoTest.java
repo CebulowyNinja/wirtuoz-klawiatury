@@ -1,4 +1,4 @@
-package pl.olencki.jan.keyboardvirtuoso.gamesdata;
+package pl.olencki.jan.keyboardvirtuoso.database;
 
 import android.arch.persistence.room.Room;
 import android.content.Context;
@@ -7,7 +7,7 @@ import android.support.test.InstrumentationRegistry;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.entities.*;
+import pl.olencki.jan.keyboardvirtuoso.database.entities.*;
 
 import java.util.ArrayList;
 import java.util.Date;

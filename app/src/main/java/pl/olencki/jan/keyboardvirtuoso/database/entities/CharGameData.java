@@ -1,4 +1,4 @@
-package pl.olencki.jan.keyboardvirtuoso.gamesdata.entities;
+package pl.olencki.jan.keyboardvirtuoso.database.entities;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
@@ -11,7 +11,7 @@ import java.util.Objects;
 
 import static android.arch.persistence.room.ForeignKey.CASCADE;
 
-@Entity(tableName = "PhraseGame",
+@Entity(tableName = "CharGame",
         foreignKeys = {
                 @ForeignKey(entity = KeyboardData.class,
                         parentColumns = "id",
@@ -21,7 +21,7 @@ import static android.arch.persistence.room.ForeignKey.CASCADE;
         }, indices = {
         @Index("keyboardId")
 })
-public class PhraseGameData {
+public class CharGameData {
     @PrimaryKey(autoGenerate = true)
     public Long id;
 
@@ -30,7 +30,7 @@ public class PhraseGameData {
     @NonNull
     public Date date;
 
-    public PhraseGameData(Long id, long keyboardId, @NonNull Date date) {
+    public CharGameData(Long id, long keyboardId, @NonNull Date date) {
         this.id = id;
         this.keyboardId = keyboardId;
         this.date = date;
@@ -40,7 +40,7 @@ public class PhraseGameData {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PhraseGameData that = (PhraseGameData) o;
+        CharGameData that = (CharGameData) o;
         return keyboardId == that.keyboardId &&
                 Objects.equals(id, that.id) &&
                 Objects.equals(date, that.date);

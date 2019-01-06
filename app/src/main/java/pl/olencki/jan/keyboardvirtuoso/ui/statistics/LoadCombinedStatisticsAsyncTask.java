@@ -2,12 +2,15 @@ package pl.olencki.jan.keyboardvirtuoso.ui.statistics;
 
 import android.os.AsyncTask;
 import pl.olencki.jan.keyboardvirtuoso.app.*;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.*;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.entities.*;
+import pl.olencki.jan.keyboardvirtuoso.database.*;
+import pl.olencki.jan.keyboardvirtuoso.database.entities.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Load all keyboard statistics task that not runs in UI threat
+ */
 abstract public class LoadCombinedStatisticsAsyncTask extends AsyncTask<Void, Void, List<CombinedStatistics>> {
     @Override
     protected List<CombinedStatistics> doInBackground(Void... voids) {

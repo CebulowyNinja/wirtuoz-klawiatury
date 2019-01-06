@@ -19,15 +19,14 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
-import java.util.List;
-
 import pl.olencki.jan.keyboardvirtuoso.*;
-import pl.olencki.jan.keyboardvirtuoso.app.AppActivity;
+import pl.olencki.jan.keyboardvirtuoso.app.*;
+import pl.olencki.jan.keyboardvirtuoso.database.entities.*;
 import pl.olencki.jan.keyboardvirtuoso.game.*;
 import pl.olencki.jan.keyboardvirtuoso.game.exception.*;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.entities.*;
-import pl.olencki.jan.keyboardvirtuoso.ui.StatisticsActivity;
+import pl.olencki.jan.keyboardvirtuoso.ui.*;
+
+import java.util.List;
 
 import static pl.olencki.jan.keyboardvirtuoso.ui.game.GameStage.*;
 
@@ -296,7 +295,7 @@ public abstract class GameActivity extends AppActivity {
         for (InputMethodInfo info : inputMethodInfos) {
             if (info.getId().equals(currentInputMethodId)) {
                 return new KeyboardData(null, info.loadLabel(getPackageManager()).toString(),
-                                        info.getId());
+                        info.getId());
             }
         }
 

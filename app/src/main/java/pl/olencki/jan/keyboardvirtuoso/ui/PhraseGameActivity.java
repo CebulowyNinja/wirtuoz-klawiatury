@@ -9,11 +9,10 @@ import android.text.style.ForegroundColorSpan;
 import android.view.KeyEvent;
 import android.view.inputmethod.EditorInfo;
 import android.widget.TextView;
-
 import pl.olencki.jan.keyboardvirtuoso.*;
+import pl.olencki.jan.keyboardvirtuoso.database.entities.*;
 import pl.olencki.jan.keyboardvirtuoso.game.*;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.entities.*;
-import pl.olencki.jan.keyboardvirtuoso.ui.game.GameActivity;
+import pl.olencki.jan.keyboardvirtuoso.ui.game.*;
 
 public class PhraseGameActivity extends GameActivity {
 
@@ -35,7 +34,7 @@ public class PhraseGameActivity extends GameActivity {
         int challengesCount = appPreferences.getPhrasesCountSingleGame();
 
         game = new PhraseGame(getResources().getStringArray(R.array.text_challenge_phrases),
-                              challengesCount);
+                challengesCount);
 
         String gameInitialText = getString(R.string.text_phrase_game_initial_desc, challengesCount);
         Spanned gameInitialSpanned;
@@ -57,8 +56,8 @@ public class PhraseGameActivity extends GameActivity {
         String[] words = challenge.getPhrase().getWords();
 
         SpannableStringBuilder builder = new SpannableStringBuilder();
-            ForegroundColorSpan span = new ForegroundColorSpan(
-                    ContextCompat.getColor(this, R.color.color_text_challenge_default));
+        ForegroundColorSpan span = new ForegroundColorSpan(
+                ContextCompat.getColor(this, R.color.color_text_challenge_default));
         for (String word : words) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 builder.append(word + " ", span, 0);
@@ -129,10 +128,10 @@ public class PhraseGameActivity extends GameActivity {
         TextView textViewSummary = findViewById(R.id.text_game_summary);
 
         String summaryText = getString(R.string.text_phrase_game_summary_count,
-                                       statistics.correctWordsCount,
-                                       statistics.wordsCount, statistics.elapsedTime);
+                statistics.correctWordsCount,
+                statistics.wordsCount, statistics.elapsedTime);
         String summarySpeedText = getString(R.string.text_phrase_game_summary_speed,
-                                            statistics.getWordsPerMinute());
+                statistics.getWordsPerMinute());
 
         textViewSummaryTop.setText(summarySpeedText);
         textViewSummary.setText(summaryText);

@@ -1,11 +1,11 @@
-package pl.olencki.jan.keyboardvirtuoso.gamesdata.entities;
+package pl.olencki.jan.keyboardvirtuoso.database.entities;
 
 import android.arch.persistence.room.Ignore;
 
 import java.util.Objects;
 
 /**
- * Entity class with generated or loaded statistics data of phrase game
+ * Model class with generated or loaded statistics data of phrase game
  */
 public class PhraseGameStatistics {
     public int phrasesCount;
@@ -49,7 +49,7 @@ public class PhraseGameStatistics {
 
     /**
      * Returns new statistics object with combined data from argument and this object
-     * @param stats
+     *
      * @return new PhraseGameStatistics object
      */
     @Ignore
