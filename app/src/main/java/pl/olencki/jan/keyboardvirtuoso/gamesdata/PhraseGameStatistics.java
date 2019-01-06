@@ -1,7 +1,6 @@
 package pl.olencki.jan.keyboardvirtuoso.gamesdata;
 
 import android.arch.persistence.room.Ignore;
-import android.util.Log;
 
 import java.util.Objects;
 
@@ -37,11 +36,11 @@ public class PhraseGameStatistics {
 
     @Ignore
     public float getWordsPerMinute() {
-        if(elapsedTime == 0) {
+        if (elapsedTime == 0) {
             return 0;
         }
 
-        return (totalLength - phrasesCount)/elapsedTime*60/5;
+        return (totalLength - phrasesCount) / elapsedTime * 60 / 5;
     }
 
     @Ignore

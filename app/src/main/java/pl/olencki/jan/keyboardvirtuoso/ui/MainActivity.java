@@ -2,32 +2,22 @@ package pl.olencki.jan.keyboardvirtuoso.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import pl.olencki.jan.keyboardvirtuoso.R;
+import pl.olencki.jan.keyboardvirtuoso.*;
 
-public class MainActivity extends AppCompatActivity {
-    private Button buttonStartPhrasesMode;
-    private Button buttonStartCharsMode;
-    private Button buttonStatistics;
-    private Button buttonSettings;
-
-
+public class MainActivity extends AppActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        buttonStartPhrasesMode = findViewById(R.id.btn_main_start_phrases);
-        buttonStartCharsMode = findViewById(R.id.btn_main_start_chars);
-        buttonStatistics = findViewById(R.id.btn_main_statistics);
-        buttonSettings = findViewById(R.id.btn_main_settings);
         addEventListeners();
     }
 
     private void addEventListeners() {
+        Button buttonStartPhrasesMode = findViewById(R.id.btn_main_start_phrases);
         buttonStartPhrasesMode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -36,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button buttonStartCharsMode = findViewById(R.id.btn_main_start_chars);
         buttonStartCharsMode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button buttonStatistics = findViewById(R.id.btn_main_statistics);
         buttonStatistics.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button buttonSettings = findViewById(R.id.btn_main_settings);
         buttonSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

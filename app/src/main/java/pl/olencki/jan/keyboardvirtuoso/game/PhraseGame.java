@@ -9,15 +9,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
-import pl.olencki.jan.keyboardvirtuoso.game.exception.PhraseChallengeException;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.GamesDatabase;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.KeyboardDao;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.KeyboardData;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.PhraseChallengeDao;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.PhraseChallengeData;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.PhraseGameDao;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.PhraseGameData;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.PhraseGameStatistics;
+import pl.olencki.jan.keyboardvirtuoso.game.exception.*;
+import pl.olencki.jan.keyboardvirtuoso.gamesdata.*;
 
 public class PhraseGame extends Game {
     private String[] phrasesString;

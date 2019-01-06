@@ -2,9 +2,7 @@ package pl.olencki.jan.keyboardvirtuoso.ui;
 
 import java.util.List;
 
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.CharGameStatistics;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.KeyboardData;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.PhraseGameStatistics;
+import pl.olencki.jan.keyboardvirtuoso.gamesdata.*;
 
 public class CombinedStatistics {
     private KeyboardData keyboardData;
@@ -32,7 +30,7 @@ public class CombinedStatistics {
     public CharGameStatistics getCharGameTotalStatistics() {
         CharGameStatistics totalStatistics = new CharGameStatistics(null);
 
-        for(CharGameStatistics stats : charGameStatisticsList) {
+        for (CharGameStatistics stats : charGameStatisticsList) {
             totalStatistics = totalStatistics.sumStatistics(stats);
         }
 

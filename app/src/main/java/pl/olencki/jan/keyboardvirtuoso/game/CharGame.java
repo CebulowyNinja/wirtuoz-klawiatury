@@ -13,15 +13,8 @@ import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
-import pl.olencki.jan.keyboardvirtuoso.game.exception.CharChallengeException;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.CharChallengeDao;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.CharChallengeData;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.CharGameDao;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.CharGameData;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.CharGameStatistics;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.GamesDatabase;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.KeyboardDao;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.KeyboardData;
+import pl.olencki.jan.keyboardvirtuoso.game.exception.*;
+import pl.olencki.jan.keyboardvirtuoso.gamesdata.*;
 
 public class CharGame extends Game {
     private HashSet<CharType> gameCharTypes = new HashSet<>();

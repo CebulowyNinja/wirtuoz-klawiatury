@@ -2,23 +2,17 @@ package pl.olencki.jan.keyboardvirtuoso.ui;
 
 import android.os.Build;
 import android.support.v4.content.ContextCompat;
-import android.text.Editable;
 import android.text.Html;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
-import android.text.TextWatcher;
 import android.text.style.ForegroundColorSpan;
 import android.view.KeyEvent;
 import android.view.inputmethod.EditorInfo;
 import android.widget.TextView;
 
-import pl.olencki.jan.keyboardvirtuoso.R;
-import pl.olencki.jan.keyboardvirtuoso.game.Phrase;
-import pl.olencki.jan.keyboardvirtuoso.game.PhraseChallenge;
-import pl.olencki.jan.keyboardvirtuoso.game.PhraseGame;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.PhraseGameStatistics;
-
-import static pl.olencki.jan.keyboardvirtuoso.ui.GameStage.CHALLENGE;
+import pl.olencki.jan.keyboardvirtuoso.*;
+import pl.olencki.jan.keyboardvirtuoso.game.*;
+import pl.olencki.jan.keyboardvirtuoso.gamesdata.*;
 
 public class PhraseGameActivity extends GameActivity {
 
@@ -37,7 +31,7 @@ public class PhraseGameActivity extends GameActivity {
     protected void initGame() {
         super.initGame();
 
-        int challengesCount = preferences.getInt("phrases_count_single_game", 10);
+        int challengesCount = appPreferences.getPhrasesCountSingleGame();
 
         game = new PhraseGame(getResources().getStringArray(R.array.text_challenge_phrases),
                               challengesCount);

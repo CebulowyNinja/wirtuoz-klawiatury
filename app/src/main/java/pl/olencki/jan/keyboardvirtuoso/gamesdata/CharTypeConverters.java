@@ -2,7 +2,7 @@ package pl.olencki.jan.keyboardvirtuoso.gamesdata;
 
 import android.arch.persistence.room.TypeConverter;
 
-import pl.olencki.jan.keyboardvirtuoso.game.CharType;
+import pl.olencki.jan.keyboardvirtuoso.game.*;
 
 public class CharTypeConverters {
     @TypeConverter

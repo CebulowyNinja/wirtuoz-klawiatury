@@ -1,8 +1,7 @@
 package pl.olencki.jan.keyboardvirtuoso.game;
 
-import pl.olencki.jan.keyboardvirtuoso.game.exception.CharChallengeException;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.CharChallengeData;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.CharGameStatistics;
+import pl.olencki.jan.keyboardvirtuoso.game.exception.*;
+import pl.olencki.jan.keyboardvirtuoso.gamesdata.*;
 
 public class CharChallenge extends Challenge {
     private CharWithType charWithType;

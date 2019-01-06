@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.CallSuper;
 import android.support.constraint.ConstraintLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -23,18 +22,14 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import pl.olencki.jan.keyboardvirtuoso.R;
-import pl.olencki.jan.keyboardvirtuoso.game.Game;
-import pl.olencki.jan.keyboardvirtuoso.game.exception.ChallengeTimerException;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.KeyboardData;
+import pl.olencki.jan.keyboardvirtuoso.*;
+import pl.olencki.jan.keyboardvirtuoso.game.*;
+import pl.olencki.jan.keyboardvirtuoso.game.exception.*;
+import pl.olencki.jan.keyboardvirtuoso.gamesdata.*;
 
-import static pl.olencki.jan.keyboardvirtuoso.ui.GameStage.CHALLENGE;
-import static pl.olencki.jan.keyboardvirtuoso.ui.GameStage.CHALLENGE_CORRECT;
-import static pl.olencki.jan.keyboardvirtuoso.ui.GameStage.CHALLENGE_INCORRECT;
-import static pl.olencki.jan.keyboardvirtuoso.ui.GameStage.INITIAL_STAGE;
-import static pl.olencki.jan.keyboardvirtuoso.ui.GameStage.SUMMARY;
+import static pl.olencki.jan.keyboardvirtuoso.ui.GameStage.*;
 
-public abstract class GameActivity extends AppCompatActivity {
+public abstract class GameActivity extends AppActivity {
     protected GameStage gameStage;
     protected Game game;
 
@@ -336,16 +331,20 @@ public abstract class GameActivity extends AppCompatActivity {
         }
     }
 
-    protected void returnToMenu() {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
-
     protected void restartGame() {
         if (gameStage != INITIAL_STAGE) {
             Intent intent = getIntent();
             finish();
             startActivity(intent);
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (gameStage == INITIAL_STAGE) {
+            returnToMenu();
+        } else {
+            restartGame();
         }
     }
 }

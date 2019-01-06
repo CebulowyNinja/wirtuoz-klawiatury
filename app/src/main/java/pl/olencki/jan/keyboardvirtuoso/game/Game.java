@@ -5,7 +5,7 @@ import android.content.Context;
 import java.util.ArrayList;
 import java.util.List;
 
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.KeyboardData;
+import pl.olencki.jan.keyboardvirtuoso.gamesdata.*;
 
 public abstract class Game {
     protected ArrayList<Challenge> challenges = new ArrayList<>();

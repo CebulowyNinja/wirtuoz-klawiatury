@@ -9,7 +9,7 @@ import android.support.annotation.NonNull;
 
 import java.util.Objects;
 
-import pl.olencki.jan.keyboardvirtuoso.game.CharType;
+import pl.olencki.jan.keyboardvirtuoso.game.*;
 
 import static android.arch.persistence.room.ForeignKey.CASCADE;
 

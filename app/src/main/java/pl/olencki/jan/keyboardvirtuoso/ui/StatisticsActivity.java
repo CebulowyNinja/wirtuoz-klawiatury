@@ -1,12 +1,10 @@
 package pl.olencki.jan.keyboardvirtuoso.ui;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,18 +17,12 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-import pl.olencki.jan.keyboardvirtuoso.R;
-import pl.olencki.jan.keyboardvirtuoso.game.CharType;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.CharGameStatistics;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.CharGameStatisticsDao;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.GamesDatabase;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.KeyboardDao;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.KeyboardData;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.PhraseGameStatistics;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.PhraseGameStatisticsDao;
+import pl.olencki.jan.keyboardvirtuoso.*;
+import pl.olencki.jan.keyboardvirtuoso.game.*;
+import pl.olencki.jan.keyboardvirtuoso.gamesdata.*;
 
-public class StatisticsActivity extends AppCompatActivity {
-    ListView listViewStatitics;
+public class StatisticsActivity extends AppActivity {
+    ListView listViewStatistics;
     CombinedStatisticsAdapter statisticsAdapter;
 
     @Override
@@ -53,8 +45,8 @@ public class StatisticsActivity extends AppCompatActivity {
         statisticsAdapter = new CombinedStatisticsAdapter(this,
                                                           R.layout.content_statistics_list_item);
 
-        listViewStatitics = findViewById(R.id.list_statistics);
-        listViewStatitics.setAdapter(statisticsAdapter);
+        listViewStatistics = findViewById(R.id.list_statistics);
+        listViewStatistics.setAdapter(statisticsAdapter);
     }
 
     private void addEventListeners() {
@@ -65,16 +57,6 @@ public class StatisticsActivity extends AppCompatActivity {
                 returnToMenu();
             }
         });
-    }
-
-    @Override
-    public void onBackPressed() {
-        returnToMenu();
-    }
-
-    private void returnToMenu() {
-        Intent intent = new Intent(StatisticsActivity.this, MainActivity.class);
-        startActivity(intent);
     }
 
     private class LoadCombinedStatisticsAsyncTask extends AsyncTask<Void, Void, List<CombinedStatistics>> {

@@ -4,7 +4,7 @@ import android.arch.persistence.room.Ignore;
 
 import java.util.Objects;
 
-import pl.olencki.jan.keyboardvirtuoso.game.CharType;
+import pl.olencki.jan.keyboardvirtuoso.game.*;
 
 public class CharGameStatistics {
     public CharType charType;
@@ -30,16 +30,16 @@ public class CharGameStatistics {
 
     @Ignore
     public float getCharsPerMinute() {
-        if(elapsedTime == 0) {
+        if (elapsedTime == 0) {
             return 0;
         }
-        return charsCount/elapsedTime*60;
+        return charsCount / elapsedTime * 60;
     }
 
     @Ignore
     public CharGameStatistics sumStatistics(CharGameStatistics stats) {
         CharGameStatistics totalStats = new CharGameStatistics(null);
-        if(charType == stats.charType) {
+        if (charType == stats.charType) {
             totalStats.charType = charType;
         }
 

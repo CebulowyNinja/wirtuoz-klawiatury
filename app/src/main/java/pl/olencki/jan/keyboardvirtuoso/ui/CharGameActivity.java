@@ -9,15 +9,11 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import pl.olencki.jan.keyboardvirtuoso.R;
-import pl.olencki.jan.keyboardvirtuoso.game.CharChallenge;
-import pl.olencki.jan.keyboardvirtuoso.game.CharGame;
-import pl.olencki.jan.keyboardvirtuoso.game.CharType;
-import pl.olencki.jan.keyboardvirtuoso.game.CharWithType;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.CharGameStatistics;
+import pl.olencki.jan.keyboardvirtuoso.*;
+import pl.olencki.jan.keyboardvirtuoso.game.*;
+import pl.olencki.jan.keyboardvirtuoso.gamesdata.*;
 
-import static pl.olencki.jan.keyboardvirtuoso.ui.GameStage.CHALLENGE;
-import static pl.olencki.jan.keyboardvirtuoso.ui.GameStage.CHALLENGE_CORRECT;
+import static pl.olencki.jan.keyboardvirtuoso.ui.GameStage.*;
 
 public class CharGameActivity extends GameActivity {
 
@@ -36,7 +32,7 @@ public class CharGameActivity extends GameActivity {
         super.initGame();
 
         CharType[] charTypes = CharType.values();
-        int challengesCount = preferences.getInt("chars_count_single_game", 10);
+        int challengesCount = appPreferences.getCharsCountSingleGame();
         game = new CharGame(charTypes, challengesCount);
 
         String gameInitialText = getString(R.string.text_char_game_initial_desc, challengesCount);
