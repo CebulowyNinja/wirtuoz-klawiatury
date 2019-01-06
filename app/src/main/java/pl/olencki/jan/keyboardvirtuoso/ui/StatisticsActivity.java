@@ -39,7 +39,7 @@ public class StatisticsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_statistics);
 
         initViewFields();
-        addButtonsListeners();
+        addEventListeners();
     }
 
     @Override
@@ -57,7 +57,7 @@ public class StatisticsActivity extends AppCompatActivity {
         listViewStatitics.setAdapter(statisticsAdapter);
     }
 
-    private void addButtonsListeners() {
+    private void addEventListeners() {
         Button buttonReturnToMenu = findViewById(R.id.btn_statistics_return);
         buttonReturnToMenu.setOnClickListener(new View.OnClickListener() {
             @Override

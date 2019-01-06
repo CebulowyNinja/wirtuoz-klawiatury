@@ -29,4 +29,67 @@
         android:text="@string/btn_return"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/text_settings_phrases_count_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:labelFor="@+id/edit_text_settings_phrases_count"
+        android:text="@string/text_settings_phrases_count"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_text_settings_phrases_count"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/edit_text_settings_phrases_count" />
+
+    <EditText
+        android:id="@+id/edit_text_settings_phrases_count"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:ems="10"
+        android:inputType="number"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/text_settings_phrases_count_label"
+        app:layout_constraintTop_toBottomOf="@+id/text_settings_title"
+        tools:text="10" />
+
+    <TextView
+        android:id="@+id/text_settings_chars_count_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="@string/text_settings_chars_count"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_text_settings_chars_count"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/edit_text_settings_chars_count" />
+
+    <EditText
+        android:id="@+id/edit_text_settings_chars_count"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:ems="10"
+        android:inputType="number"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/text_settings_chars_count_label"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_settings_phrases_count"
+        tools:text="10" />
+
+    <Button
+        android:id="@+id/btn_settings_save"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="@color/color_btn_primary"
+        android:text="@string/btn_settings_save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_settings_chars_count" />
+
 </android.support.constraint.ConstraintLayout>

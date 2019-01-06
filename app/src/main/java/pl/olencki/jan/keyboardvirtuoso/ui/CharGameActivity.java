@@ -36,7 +36,7 @@ public class CharGameActivity extends GameActivity {
         super.initGame();
 
         CharType[] charTypes = CharType.values();
-        int challengesCount = 5;
+        int challengesCount = preferences.getInt("chars_count_single_game", 10);
         game = new CharGame(charTypes, challengesCount);
 
         String gameInitialText = getString(R.string.text_char_game_initial_desc, challengesCount);

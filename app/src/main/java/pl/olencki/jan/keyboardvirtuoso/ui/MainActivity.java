@@ -24,10 +24,10 @@ public class MainActivity extends AppCompatActivity {
         buttonStartCharsMode = findViewById(R.id.btn_main_start_chars);
         buttonStatistics = findViewById(R.id.btn_main_statistics);
         buttonSettings = findViewById(R.id.btn_main_settings);
-        addButtonsListeners();
+        addEventListeners();
     }
 
-    private void addButtonsListeners() {
+    private void addEventListeners() {
         buttonStartPhrasesMode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,6 +63,5 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-
     }
 }

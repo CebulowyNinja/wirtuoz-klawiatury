@@ -32,4 +32,7 @@
     <string name="text_statistics_char_upper_letters">Duże litery – %1$.0f%% poprawnie – %2$.1f na minutę</string>
     <string name="text_statistics_char_digits">Cyfry – %1$.0f%% poprawnie – %2$.1f na minutę</string>
     <string name="text_statistics_char_special">Znaki specjalne – %1$.0f%% poprawnie – %2$.1f na minutę</string>
+    <string name="text_settings_phrases_count">Ilość fraz w pojedynczej grze</string>
+    <string name="text_settings_chars_count">Ilość znaków w pojedynczej grze</string>
+    <string name="btn_settings_save">Zapisz</string>
 </resources>

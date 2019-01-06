@@ -37,7 +37,7 @@ public class PhraseGameActivity extends GameActivity {
     protected void initGame() {
         super.initGame();
 
-        int challengesCount = 5;
+        int challengesCount = preferences.getInt("phrases_count_single_game", 10);
 
         game = new PhraseGame(getResources().getStringArray(R.array.text_challenge_phrases),
                               challengesCount);

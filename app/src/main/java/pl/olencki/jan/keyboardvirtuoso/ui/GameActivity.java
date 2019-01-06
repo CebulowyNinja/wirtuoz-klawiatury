@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.CallSuper;
@@ -37,6 +38,8 @@ public abstract class GameActivity extends AppCompatActivity {
     protected GameStage gameStage;
     protected Game game;
 
+    protected SharedPreferences preferences;
+
     protected ConstraintLayout initialLayout;
     protected ConstraintLayout gameLayout;
     protected ConstraintLayout summaryLayout;
@@ -55,6 +58,8 @@ public abstract class GameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
+
+        preferences = getSharedPreferences("app_preferences", MODE_PRIVATE);
 
         initViewFields();
         addEventListeners();

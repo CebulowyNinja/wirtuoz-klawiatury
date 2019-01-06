@@ -31,4 +31,7 @@
     <string name="text_statistics_char_upper_letters">Upper letters – %1$.0f%% correct – %2$.1f per minute</string>
     <string name="text_statistics_char_digits">Digits – %1$.0f%% poprawnie – %2$.1f per minute</string>
     <string name="text_statistics_char_special">Special chars – %1$.0f%% poprawnie – %2$.1f per minute</string>
+    <string name="text_settings_phrases_count">Phrases count in single game</string>
+    <string name="text_settings_chars_count">Chars count in single game</string>
+    <string name="btn_settings_save">Save</string>
 </resources>
