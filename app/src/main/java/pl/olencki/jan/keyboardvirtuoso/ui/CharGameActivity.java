@@ -1,17 +1,10 @@
 package pl.olencki.jan.keyboardvirtuoso.ui;
 
-import android.content.Context;
 import android.os.Build;
-import android.provider.Settings;
 import android.text.Editable;
 import android.text.Html;
 import android.text.Spanned;
 import android.text.TextWatcher;
-import android.view.KeyEvent;
-import android.view.View;
-import android.view.inputmethod.InputMethodInfo;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.List;
@@ -22,20 +15,16 @@ import pl.olencki.jan.keyboardvirtuoso.game.CharGame;
 import pl.olencki.jan.keyboardvirtuoso.game.CharType;
 import pl.olencki.jan.keyboardvirtuoso.game.CharWithType;
 import pl.olencki.jan.keyboardvirtuoso.gamesdata.CharGameStatistics;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.KeyboardData;
 
 import static pl.olencki.jan.keyboardvirtuoso.ui.GameStage.CHALLENGE;
 import static pl.olencki.jan.keyboardvirtuoso.ui.GameStage.CHALLENGE_CORRECT;
 
 public class CharGameActivity extends GameActivity {
-    private TextView textViewChallenge;
-    private EditText editTextChallenge;
-    private EditText editTextHidden;
+
 
     private TextView textViewGameInitial;
     private TextView textViewGameSummaryTop;
     private TextView textViewGameSummary;
-    private KeyboardData keyboardData;
 
     @Override
     protected int getLayoutId() {
@@ -64,7 +53,6 @@ public class CharGameActivity extends GameActivity {
 
     @Override
     protected void displayCurrentChallenge() {
-        super.displayCurrentChallenge();
         setEnabledEditTextChallenge(true);
 
         CharChallenge challenge = (CharChallenge) game.getCurrentChallenge();
@@ -89,16 +77,7 @@ public class CharGameActivity extends GameActivity {
         }
     }
 
-    @Override
-    protected void startSummary() {
-        super.startSummary();
-        hideKeyboard();
-
-        showStats();
-        game.addToDatabase(this.getApplicationContext(), keyboardData);
-    }
-
-    private void showStats() {
+    protected void displayStatistics() {
         CharGame charGame = (CharGame) game;
         List<CharGameStatistics> stats = charGame.getGameStatistics();
 
@@ -124,64 +103,9 @@ public class CharGameActivity extends GameActivity {
         textViewSummary.setText(summarySpeedText);
     }
 
-    private void hideKeyboard() {
-        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(
-                Context.INPUT_METHOD_SERVICE);
-
-        View view = getCurrentFocus();
-        if (view == null) {
-            view = new View(this);
-        }
-        view.clearFocus();
-        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
-    }
-
-    private void setEnabledEditTextChallenge(boolean enable) {
-        if (enable) {
-            editTextChallenge.getText().clear();
-            editTextChallenge.setEnabled(true);
-            editTextChallenge.requestFocus();
-            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(
-                    Context.INPUT_METHOD_SERVICE);
-            inputMethodManager.showSoftInput(editTextChallenge, InputMethodManager.SHOW_IMPLICIT);
-            editTextChallenge.setCursorVisible(false);
-        } else {
-            editTextHidden.requestFocus();
-            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(
-                    Context.INPUT_METHOD_SERVICE);
-            inputMethodManager.showSoftInput(editTextHidden, InputMethodManager.SHOW_IMPLICIT);
-            editTextChallenge.setEnabled(false);
-            editTextHidden.setCursorVisible(false);
-            editTextChallenge.setCursorVisible(false);
-        }
-    }
-
-    private KeyboardData getCurrentKeyboard() {
-        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(
-                Context.INPUT_METHOD_SERVICE);
-        List<InputMethodInfo> inputMethodInfos = inputMethodManager.getEnabledInputMethodList();
-        String currentInputMethodId = Settings.Secure.getString(
-                getContentResolver(),
-                Settings.Secure.DEFAULT_INPUT_METHOD
-        );
-
-        for (InputMethodInfo info : inputMethodInfos) {
-            if (info.getId().equals(currentInputMethodId)) {
-                return new KeyboardData(null, info.loadLabel(getPackageManager()).toString(),
-                                        info.getId());
-            }
-        }
-
-        return null;
-    }
-
     @Override
     protected void initViewFields() {
         super.initViewFields();
-
-        textViewChallenge = findViewById(R.id.text_game_challenge);
-        editTextChallenge = findViewById(R.id.edit_text_game_input);
-        editTextHidden = findViewById(R.id.edit_text_game_hiddden);
 
         TextView textViewChallengeCountDesc = findViewById(R.id.text_game_challenges_desc);
         textViewChallengeCountDesc.setText(R.string.text_chars_count_desc);
@@ -212,13 +136,6 @@ public class CharGameActivity extends GameActivity {
                     onChallengeComplete();
                     nextChallenge();
                 }
-
-                if (keyboardData == null) {
-                    keyboardData = getCurrentKeyboard();
-                }
-                if (!keyboardData.equals(getCurrentKeyboard())) {
-                    restartGame();
-                }
             }
 
             @Override
@@ -226,12 +143,6 @@ public class CharGameActivity extends GameActivity {
                 if (editable.length() > 1) {
                     editable.delete(1, editable.length());
                 }
-            }
-        });
-        editTextHidden.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
-                return true;
             }
         });
     }
