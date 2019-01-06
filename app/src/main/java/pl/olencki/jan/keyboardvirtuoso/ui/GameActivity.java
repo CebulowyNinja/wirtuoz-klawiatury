@@ -219,6 +219,13 @@ public abstract class GameActivity extends AppCompatActivity {
             }
         });
 
+        editTextChallenge.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+                return true;
+            }
+        });
+
         editTextHidden.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {

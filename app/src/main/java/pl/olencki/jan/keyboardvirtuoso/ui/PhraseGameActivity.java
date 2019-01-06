@@ -155,9 +155,8 @@ public class PhraseGameActivity extends GameActivity {
                             new Phrase(editTextChallenge.getText().toString()));
                     onChallengeComplete();
                     nextChallenge();
-                    return true;
                 }
-                return false;
+                return true;
             }
         });
     }
