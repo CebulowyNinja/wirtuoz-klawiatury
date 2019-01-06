@@ -3,7 +3,7 @@ package pl.olencki.jan.keyboardvirtuoso.game;
 import org.junit.Test;
 
 import pl.olencki.jan.keyboardvirtuoso.game.exception.CharChallengeException;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.CharChallengeData;
+import pl.olencki.jan.keyboardvirtuoso.gamesdata.entities.CharChallengeData;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;

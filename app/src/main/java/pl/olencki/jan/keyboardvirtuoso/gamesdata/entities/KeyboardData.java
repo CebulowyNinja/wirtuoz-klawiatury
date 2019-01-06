@@ -1,4 +1,4 @@
-package pl.olencki.jan.keyboardvirtuoso.gamesdata;
+package pl.olencki.jan.keyboardvirtuoso.gamesdata.entities;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.Index;
@@ -39,14 +39,5 @@ public class KeyboardData {
     @Override
     public int hashCode() {
         return Objects.hash(id, name, className);
-    }
-
-    @Override
-    public String toString() {
-        return "KeyboardData{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", className='" + className + '\'' +
-                '}';
     }
 }

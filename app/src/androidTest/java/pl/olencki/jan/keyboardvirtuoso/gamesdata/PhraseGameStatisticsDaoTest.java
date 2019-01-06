@@ -7,6 +7,7 @@ import android.support.test.InstrumentationRegistry;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import pl.olencki.jan.keyboardvirtuoso.gamesdata.entities.*;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -71,13 +72,13 @@ public class PhraseGameStatisticsDaoTest {
         phraseChallengeDao.insertMultiple(challenges);
 
         PhraseGameStatistics statisticsAll = phraseGameStatisticsDao.loadAll();
-        assertEquals(new PhraseGameStatistics(8, 4, 8*6, 4*6+4*5, 8*2, 8*4, 4*4+4*3, 4*2+4*1), statisticsAll);
+        assertEquals(new PhraseGameStatistics(8, 4, 8*6, 4*6+4*5, 8*2, 8*4, 4*4+4*3, 4*2+4*1, 4*2+4*1), statisticsAll);
 
         PhraseGameStatistics statisticsByGame = phraseGameStatisticsDao.loadByGameId(games.get(0).id);
-        assertEquals(new PhraseGameStatistics(4, 2, 4*6, 2*6+2*5, 4*2, 4*4, 2*4+2*3, 2*2+2*1), statisticsByGame);
+        assertEquals(new PhraseGameStatistics(4, 2, 4*6, 2*6+2*5, 4*2, 4*4, 2*4+2*3, 2*2+2*1, 4*2+4*1), statisticsByGame);
 
         PhraseGameStatistics statisticsByKeyboard = phraseGameStatisticsDao.loadByKeyboardId(keyboards.get(0).id);
-        assertEquals(new PhraseGameStatistics(6, 3, 6*6, 3*6+3*5, 6*2, 6*4, 3*4+3*3, 3*2+3*1), statisticsByKeyboard);
+        assertEquals(new PhraseGameStatistics(6, 3, 6*6, 3*6+3*5, 6*2, 6*4, 3*4+3*3, 3*2+3*1, 4*2+4*1), statisticsByKeyboard);
     }
 
     private PhraseChallengeData generateChallenge(long gameId, int phraseLength, int wordsCount,

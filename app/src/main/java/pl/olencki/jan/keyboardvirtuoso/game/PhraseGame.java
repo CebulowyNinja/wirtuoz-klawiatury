@@ -11,6 +11,7 @@ import java.util.Random;
 
 import pl.olencki.jan.keyboardvirtuoso.game.exception.*;
 import pl.olencki.jan.keyboardvirtuoso.gamesdata.*;
+import pl.olencki.jan.keyboardvirtuoso.gamesdata.entities.*;
 
 public class PhraseGame extends Game {
     private String[] phrasesString;

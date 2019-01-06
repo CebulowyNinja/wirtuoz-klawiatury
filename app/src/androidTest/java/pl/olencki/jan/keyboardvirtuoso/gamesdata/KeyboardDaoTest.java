@@ -7,6 +7,7 @@ import android.support.test.InstrumentationRegistry;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import pl.olencki.jan.keyboardvirtuoso.gamesdata.entities.*;
 
 import java.util.ArrayList;
 import java.util.List;

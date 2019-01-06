@@ -13,6 +13,7 @@ import java.util.Date;
 import java.util.List;
 
 import pl.olencki.jan.keyboardvirtuoso.game.CharType;
+import pl.olencki.jan.keyboardvirtuoso.gamesdata.entities.*;
 
 import static org.junit.Assert.assertTrue;
 

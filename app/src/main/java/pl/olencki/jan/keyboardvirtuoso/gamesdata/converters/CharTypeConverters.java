@@ -1,7 +1,6 @@
-package pl.olencki.jan.keyboardvirtuoso.gamesdata;
+package pl.olencki.jan.keyboardvirtuoso.gamesdata.converters;
 
 import android.arch.persistence.room.TypeConverter;
-
 import pl.olencki.jan.keyboardvirtuoso.game.*;
 
 public class CharTypeConverters {

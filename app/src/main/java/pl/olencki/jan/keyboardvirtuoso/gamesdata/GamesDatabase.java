@@ -5,15 +5,18 @@ import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.arch.persistence.room.TypeConverters;
 import android.content.Context;
+import pl.olencki.jan.keyboardvirtuoso.gamesdata.converters.*;
+import pl.olencki.jan.keyboardvirtuoso.gamesdata.entities.*;
 
 @Database(version = 1,
-          entities = {
-                  KeyboardData.class, PhraseGameData.class, CharGameData.class, CharChallengeData.class, PhraseChallengeData.class
-          }, exportSchema = false)
+        entities = {
+                KeyboardData.class, PhraseGameData.class, CharGameData.class,
+                CharChallengeData.class, PhraseChallengeData.class
+        }, exportSchema = false)
 @TypeConverters({
-                        DateConverters.class,
-                        CharTypeConverters.class
-                })
+        DateConverters.class,
+        CharTypeConverters.class
+})
 public abstract class GamesDatabase extends RoomDatabase {
     private static final String DATABASE_FILE = "gameDatabase.db";
     private static volatile GamesDatabase instance;
@@ -29,10 +32,7 @@ public abstract class GamesDatabase extends RoomDatabase {
     }
 
     private static GamesDatabase create(final Context context) {
-        return Room.databaseBuilder(
-                context,
-                GamesDatabase.class,
-                DATABASE_FILE).build();
+        return Room.databaseBuilder(context, GamesDatabase.class, DATABASE_FILE).build();
     }
 
     abstract public KeyboardDao keyboardDao();

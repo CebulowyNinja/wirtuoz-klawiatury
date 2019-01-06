@@ -1,4 +1,4 @@
-package pl.olencki.jan.keyboardvirtuoso.gamesdata;
+package pl.olencki.jan.keyboardvirtuoso.gamesdata.entities;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
@@ -14,10 +14,10 @@ import static android.arch.persistence.room.ForeignKey.CASCADE;
 @Entity(tableName = "CharGame",
         foreignKeys = {
                 @ForeignKey(entity = KeyboardData.class,
-                            parentColumns = "id",
-                            childColumns = "keyboardId",
-                            onDelete = CASCADE,
-                            onUpdate = CASCADE)
+                        parentColumns = "id",
+                        childColumns = "keyboardId",
+                        onDelete = CASCADE,
+                        onUpdate = CASCADE)
         }, indices = {
         @Index("keyboardId")
 })

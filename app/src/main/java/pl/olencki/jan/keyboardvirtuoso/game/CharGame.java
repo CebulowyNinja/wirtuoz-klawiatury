@@ -15,6 +15,7 @@ import java.util.Set;
 
 import pl.olencki.jan.keyboardvirtuoso.game.exception.*;
 import pl.olencki.jan.keyboardvirtuoso.gamesdata.*;
+import pl.olencki.jan.keyboardvirtuoso.gamesdata.entities.*;
 
 public class CharGame extends Game {
     private HashSet<CharType> gameCharTypes = new HashSet<>();

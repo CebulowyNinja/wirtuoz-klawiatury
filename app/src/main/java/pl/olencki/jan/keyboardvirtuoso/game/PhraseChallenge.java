@@ -1,7 +1,7 @@
 package pl.olencki.jan.keyboardvirtuoso.game;
 
 import pl.olencki.jan.keyboardvirtuoso.game.exception.*;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.*;
+import pl.olencki.jan.keyboardvirtuoso.gamesdata.entities.*;
 
 public class PhraseChallenge extends Challenge {
     private Phrase phrase;

@@ -1,11 +1,13 @@
-package pl.olencki.jan.keyboardvirtuoso.gamesdata;
+package pl.olencki.jan.keyboardvirtuoso.gamesdata.entities;
 
 import android.arch.persistence.room.Ignore;
+import pl.olencki.jan.keyboardvirtuoso.game.*;
 
 import java.util.Objects;
 
-import pl.olencki.jan.keyboardvirtuoso.game.*;
-
+/**
+ * Entity class with generated or loaded statistics data of char game
+ */
 public class CharGameStatistics {
     public CharType charType;
 
@@ -33,9 +35,15 @@ public class CharGameStatistics {
         if (elapsedTime == 0) {
             return 0;
         }
+
         return charsCount / elapsedTime * 60;
     }
 
+    /**
+     * Returns new statistics object with combined data from argument and this object
+     * @param stats
+     * @return new CharGameStatistics object
+     */
     @Ignore
     public CharGameStatistics sumStatistics(CharGameStatistics stats) {
         CharGameStatistics totalStats = new CharGameStatistics(null);
@@ -67,18 +75,6 @@ public class CharGameStatistics {
     public int hashCode() {
 
         return Objects.hash(charType, charsCount, correctCharsCount, elapsedTime,
-                            elapsedTimeCorrect);
-    }
-
-    //TODO delete
-    @Override
-    public String toString() {
-        return "CharGameStatistics{" +
-                "charType=" + charType +
-                ", charsCount=" + charsCount +
-                ", correctCharsCount=" + correctCharsCount +
-                ", elapsedTime=" + elapsedTime +
-                ", elapsedTimeCorrect=" + elapsedTimeCorrect +
-                '}';
+                elapsedTimeCorrect);
     }
 }

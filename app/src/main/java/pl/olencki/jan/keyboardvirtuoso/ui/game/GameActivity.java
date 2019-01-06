@@ -26,7 +26,7 @@ import pl.olencki.jan.keyboardvirtuoso.*;
 import pl.olencki.jan.keyboardvirtuoso.app.AppActivity;
 import pl.olencki.jan.keyboardvirtuoso.game.*;
 import pl.olencki.jan.keyboardvirtuoso.game.exception.*;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.*;
+import pl.olencki.jan.keyboardvirtuoso.gamesdata.entities.*;
 import pl.olencki.jan.keyboardvirtuoso.ui.StatisticsActivity;
 
 import static pl.olencki.jan.keyboardvirtuoso.ui.game.GameStage.*;

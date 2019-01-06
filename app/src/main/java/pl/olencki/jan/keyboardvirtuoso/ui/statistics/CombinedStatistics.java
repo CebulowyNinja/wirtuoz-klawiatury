@@ -2,7 +2,7 @@ package pl.olencki.jan.keyboardvirtuoso.ui.statistics;
 
 import java.util.List;
 
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.*;
+import pl.olencki.jan.keyboardvirtuoso.gamesdata.entities.*;
 
 public class CombinedStatistics {
     private KeyboardData keyboardData;

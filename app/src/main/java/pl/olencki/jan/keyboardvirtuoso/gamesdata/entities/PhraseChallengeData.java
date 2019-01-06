@@ -1,10 +1,6 @@
-package pl.olencki.jan.keyboardvirtuoso.gamesdata;
+package pl.olencki.jan.keyboardvirtuoso.gamesdata.entities;
 
-import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.ForeignKey;
-import android.arch.persistence.room.Ignore;
-import android.arch.persistence.room.Index;
-import android.arch.persistence.room.PrimaryKey;
+import android.arch.persistence.room.*;
 import android.support.annotation.NonNull;
 
 import java.util.Objects;
@@ -14,10 +10,10 @@ import static android.arch.persistence.room.ForeignKey.CASCADE;
 @Entity(tableName = "PhraseChallenge",
         foreignKeys = {
                 @ForeignKey(entity = PhraseGameData.class,
-                            parentColumns = "id",
-                            childColumns = "gameId",
-                            onDelete = CASCADE,
-                            onUpdate = CASCADE)
+                        parentColumns = "id",
+                        childColumns = "gameId",
+                        onDelete = CASCADE,
+                        onUpdate = CASCADE)
         }, indices = {
         @Index("gameId")
 })
@@ -32,6 +28,7 @@ public class PhraseChallengeData {
     public int phraseLength;
     public int wordsCount;
     public int wordsDiacriticCount;
+
     public boolean isCorrect;
 
     @NonNull
@@ -96,7 +93,7 @@ public class PhraseChallengeData {
     public int hashCode() {
 
         return Objects.hash(id, gameId, phrase, phraseLength, wordsCount, wordsDiacriticCount,
-                            isCorrect, typedPhrase, typedPhraseLength, correctWordsCount,
-                            correctWordsDiacriticCount, elapsedTime);
+                isCorrect, typedPhrase, typedPhraseLength, correctWordsCount,
+                correctWordsDiacriticCount, elapsedTime);
     }
 }

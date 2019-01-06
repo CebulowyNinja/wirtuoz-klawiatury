@@ -9,12 +9,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.TextView;
 import pl.olencki.jan.keyboardvirtuoso.*;
 import pl.olencki.jan.keyboardvirtuoso.game.*;
-import pl.olencki.jan.keyboardvirtuoso.gamesdata.*;
-import pl.olencki.jan.keyboardvirtuoso.ui.*;
+import pl.olencki.jan.keyboardvirtuoso.gamesdata.entities.*;
 
 public class CombinedStatisticsAdapter extends ArrayAdapter<CombinedStatistics> {
     public CombinedStatisticsAdapter(@NonNull Context context, int resource) {

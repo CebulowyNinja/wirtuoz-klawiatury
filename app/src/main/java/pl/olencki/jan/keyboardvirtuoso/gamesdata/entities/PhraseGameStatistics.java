@@ -1,15 +1,19 @@
-package pl.olencki.jan.keyboardvirtuoso.gamesdata;
+package pl.olencki.jan.keyboardvirtuoso.gamesdata.entities;
 
 import android.arch.persistence.room.Ignore;
 
 import java.util.Objects;
 
+/**
+ * Entity class with generated or loaded statistics data of phrase game
+ */
 public class PhraseGameStatistics {
     public int phrasesCount;
     public int correctPhrasesCount;
 
     public int totalLength;
     public int totalTypedLength;
+
     public float elapsedTime;
 
     public int wordsCount;
@@ -43,6 +47,11 @@ public class PhraseGameStatistics {
         return (totalLength - phrasesCount) / elapsedTime * 60 / 5;
     }
 
+    /**
+     * Returns new statistics object with combined data from argument and this object
+     * @param stats
+     * @return new PhraseGameStatistics object
+     */
     @Ignore
     public PhraseGameStatistics sumStatistics(PhraseGameStatistics stats) {
         PhraseGameStatistics totalStats = new PhraseGameStatistics();
@@ -79,22 +88,6 @@ public class PhraseGameStatistics {
     public int hashCode() {
 
         return Objects.hash(phrasesCount, correctPhrasesCount, totalLength, totalTypedLength,
-                            elapsedTime, wordsCount, correctWordsCount, correctWordsDiacriticCount);
-    }
-
-    //TODO delte
-    @Override
-    public String toString() {
-        return "PhraseGameStatistics{" +
-                "phrasesCount=" + phrasesCount +
-                ", correctPhrasesCount=" + correctPhrasesCount +
-                ", totalLength=" + totalLength +
-                ", totalTypedLength=" + totalTypedLength +
-                ", elapsedTime=" + elapsedTime +
-                ", wordsCount=" + wordsCount +
-                ", wordsDiacriticCount=" + wordsDiacriticCount +
-                ", correctWordsCount=" + correctWordsCount +
-                ", correctWordsDiacriticCount=" + correctWordsDiacriticCount +
-                '}';
+                elapsedTime, wordsCount, correctWordsCount, correctWordsDiacriticCount);
     }
 }

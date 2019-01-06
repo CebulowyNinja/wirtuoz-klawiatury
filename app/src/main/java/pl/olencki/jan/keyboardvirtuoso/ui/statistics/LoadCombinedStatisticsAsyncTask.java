@@ -3,7 +3,7 @@ package pl.olencki.jan.keyboardvirtuoso.ui.statistics;
 import android.os.AsyncTask;
 import pl.olencki.jan.keyboardvirtuoso.app.*;
 import pl.olencki.jan.keyboardvirtuoso.gamesdata.*;
-import pl.olencki.jan.keyboardvirtuoso.ui.*;
+import pl.olencki.jan.keyboardvirtuoso.gamesdata.entities.*;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,10 +1,7 @@
 package pl.olencki.jan.keyboardvirtuoso.gamesdata;
 
-import android.arch.persistence.room.Dao;
-import android.arch.persistence.room.Delete;
-import android.arch.persistence.room.Insert;
-import android.arch.persistence.room.Query;
-import android.arch.persistence.room.Update;
+import android.arch.persistence.room.*;
+import pl.olencki.jan.keyboardvirtuoso.gamesdata.entities.*;
 
 import java.util.List;
 
