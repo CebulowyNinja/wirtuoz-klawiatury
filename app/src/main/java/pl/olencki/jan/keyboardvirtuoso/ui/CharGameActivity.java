@@ -95,8 +95,8 @@ public class CharGameActivity extends GameActivity {
                                        charsCount, ellapsedTime);
         String summarySpeedText = getString(R.string.text_char_game_summary_speed, speed);
 
-        textViewSummaryTop.setText(summaryText);
-        textViewSummary.setText(summarySpeedText);
+        textViewSummaryTop.setText(summarySpeedText);
+        textViewSummary.setText(summaryText);
     }
 
     @Override

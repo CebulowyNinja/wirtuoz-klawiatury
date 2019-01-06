@@ -19,43 +19,38 @@
 
     <Button
         android:id="@+id/btn_game_start_again"
-        style="@style/Widget.AppCompat.Button.Colored"
+        style="@style/AppTheme.Button.Primary"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_content_left"
         android:layout_marginTop="@dimen/margin_small"
         android:layout_marginEnd="@dimen/margin_content_right"
-        android:background="@color/colorAccent"
         android:text="@string/btn_restart_game"
-        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_game_summary" />
 
     <Button
         android:id="@+id/btn_game_return_to_menu"
-        style="@style/Widget.AppCompat.Button.Colored"
+        style="@style/AppTheme.Button.Secondary"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_content_left"
-        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_extrasmall"
         android:layout_marginEnd="@dimen/margin_content_right"
-        android:background="@color/colorAccent"
         android:text="@string/btn_return_to_menu"
-        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_game_start_again" />
 
     <Button
         android:id="@+id/btn_game_statistics"
-        style="@style/Widget.AppCompat.Button.Colored"
+        style="@style/AppTheme.Button.Secondary"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_content_left"
-        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_extrasmall"
         android:layout_marginEnd="@dimen/margin_content_right"
-        android:background="@color/colorPrimaryDark"
         android:text="@string/btn_go_to_statistics"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -70,11 +65,12 @@
         android:layout_marginEnd="@dimen/margin_content_right"
         android:gravity="center"
         android:textAllCaps="false"
-        android:textSize="24sp"
+        android:textSize="@dimen/text_size_large"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Udało Ci się wpisać 10 fraz w ciągu 120 sekund" />
+        tools:text="Osiągnąłeś szybkość 12 słów na minutę" />
 
     <TextView
         android:id="@+id/text_game_summary"
@@ -84,11 +80,10 @@
         android:layout_marginTop="@dimen/margin_small"
         android:layout_marginEnd="@dimen/margin_content_right"
         android:gravity="center"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:textSize="@dimen/text_size_large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_game_summary_top"
-        tools:text="Osiągnąłeś szybkość 12 słów na minutę" />
+        tools:text="Udało Ci się wpisać 10 fraz w ciągu 120 sekund" />
 
 </android.support.constraint.ConstraintLayout>

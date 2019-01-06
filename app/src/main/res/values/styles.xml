@@ -1,14 +1,32 @@
 <resources>
 
-    <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="colorError">@color/color_danger</item>
+        <item name="colorAccent">@color/color_accent</item>
     </style>
-
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <style name="AppTheme.Button.Primary" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:background">@color/color_primary</item>
+        <item name="android:textSize">@dimen/text_size_btn_medium</item>
+    </style>
+    <style name="AppTheme.Button.Secondary" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:background">@color/color_secondary</item>
+        <item name="android:textSize">@dimen/text_size_btn_small</item>
+    </style>
+    <style name="AppTheme.Button.Danger" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:background">@color/color_danger</item>
+        <item name="android:textSize">@dimen/text_size_btn_small</item>
+    </style>
+
+    <style name="AppTheme.Button.Default" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:textSize">@dimen/text_size_btn_small</item>
+        <item name="android:minWidth">0dp</item>
+    </style>
+
 </resources>

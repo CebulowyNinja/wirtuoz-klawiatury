@@ -53,11 +53,24 @@ public class PhraseGameActivity extends GameActivity {
         setEnabledEditTextChallenge(true);
 
         PhraseChallenge challenge = (PhraseChallenge) game.getCurrentChallenge();
-        String challengeText = challenge.getPhrase().getText();
-        textViewChallenge.setText(challengeText);
-        textViewChallenge.setTextColor(
-                getResources().getColor(R.color.color_text_challenge_default));
+        String[] words = challenge.getPhrase().getWords();
+
+        SpannableStringBuilder builder = new SpannableStringBuilder();
+            ForegroundColorSpan span = new ForegroundColorSpan(
+                    ContextCompat.getColor(this, R.color.color_text_challenge_default));
+        for (String word : words) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                builder.append(word + " ", span, 0);
+            } else {
+                int length = builder.length();
+                builder.append(word + " ");
+                builder.setSpan(span, length, length + word.length(), 0);
+            }
+        }
+
+        textViewChallenge.setText(builder);
     }
+
 
     @Override
     protected void onChallengeComplete() {
@@ -120,8 +133,8 @@ public class PhraseGameActivity extends GameActivity {
         String summarySpeedText = getString(R.string.text_phrase_game_summary_speed,
                                             statistics.getWordsPerMinute());
 
-        textViewSummaryTop.setText(summaryText);
-        textViewSummary.setText(summarySpeedText);
+        textViewSummaryTop.setText(summarySpeedText);
+        textViewSummary.setText(summaryText);
     }
 
     @Override

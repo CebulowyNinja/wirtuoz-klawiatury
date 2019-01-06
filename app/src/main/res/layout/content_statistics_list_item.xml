@@ -8,83 +8,12 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginBottom="@dimen/margin_small"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/text_statistics_list_char_digits"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_statistics_list_char_upper_letters"
-            tools:text="60% poprawnie wpisanych dużych liter z szybkością 40 znaków na minutę" />
-
-        <TextView
-            android:id="@+id/text_statistics_list_phrase_correct"
-            android:layout_width="0dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_statistics_list_phrase_speed"
-            tools:text="80% poprawnie wpisanych słów" />
-
-        <TextView
-            android:id="@+id/text_statistics_list_phrase_speed"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:textSize="@dimen/text_size_btn_medium"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_statistics_list_keyboard_name"
-            tools:text="40 słów na minutę" />
-
-        <TextView
-            android:id="@+id/text_statistics_list_phrase_correct_diacritic"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_statistics_list_phrase_correct"
-            tools:text="40% poprawnych słów ze znakami diakrytycznymi" />
-
-        <TextView
-            android:id="@+id/text_statistics_list_char_lower_letters"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_statistics_list_char_speed"
-            tools:text="60% poprawnie wpisanych dużych liter z szybkością 40 znaków na minutę" />
-
-        <TextView
-            android:id="@+id/text_statistics_list_char_upper_letters"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_statistics_list_char_lower_letters"
-            tools:text="60% poprawnie wpisanych dużych liter z szybkością 40 znaków na minutę" />
 
         <TextView
             android:id="@+id/text_statistics_list_keyboard_name"
@@ -98,40 +27,109 @@
 
         <Button
             android:id="@+id/btn_statistics_list_clear"
-            style="@style/Widget.AppCompat.Button.Colored"
+            style="@style/AppTheme.Button.Danger"
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/btn_height_small"
-            android:background="@color/color_btn_secondary"
+            android:layout_height="wrap_content"
             android:text="@string/btn_statistics_clear"
             android:textSize="@dimen/text_size_btn_small"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/text_statistics_list_char_special"
+            android:id="@+id/text_statistics_list_phrase_speed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_extrasmall"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_statistics_list_keyboard_name"
+            tools:text="40 słów na minutę" />
+
+        <TextView
+            android:id="@+id/text_statistics_list_phrase_correct"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_statistics_list_char_digits"
-            tools:text="60% poprawnie wpisanych dużych liter z szybkością 40 znaków na minutę" />
+            app:layout_constraintTop_toBottomOf="@+id/text_statistics_list_phrase_speed"
+            tools:text="80% poprawnie wpisanych słów" />
+
+        <TextView
+            android:id="@+id/text_statistics_list_phrase_correct_diacritic"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_statistics_list_phrase_correct"
+            tools:text="40% poprawnych słów ze znakami diakrytycznymi" />
 
         <TextView
             android:id="@+id/text_statistics_list_char_speed"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:textSize="@dimen/text_size_btn_medium"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_extrasmall"
+            android:textSize="@dimen/text_size_medium"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_statistics_list_phrase_correct_diacritic"
             tools:text="40 pojedynczych znaków na minutę" />
+
+        <TextView
+            android:id="@+id/text_statistics_list_char_lower_letters"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="@dimen/margin_extrasmall"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_statistics_list_char_speed"
+            tools:text="Duże litery – 60% poprawnie – 10 na minutę" />
+
+        <TextView
+            android:id="@+id/text_statistics_list_char_upper_letters"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="@dimen/margin_extrasmall"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_statistics_list_char_lower_letters"
+            tools:text="Duże litery – 60% poprawnie – 10 na minutę" />
+
+        <TextView
+            android:id="@+id/text_statistics_list_char_digits"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="@dimen/margin_extrasmall"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_statistics_list_char_upper_letters"
+            tools:text="Duże litery – 60% poprawnie – 10 na minutę" />
+
+        <TextView
+            android:id="@+id/text_statistics_list_char_special"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="@dimen/margin_extrasmall"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_statistics_list_char_digits"
+            tools:text="Duże litery – 60% poprawnie – 10 na minutę" />
+
     </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>

@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574b</color>
-    <color name="colorAccent">#d81b60</color>
-    <color name="modal_background">#edffffff</color>
-    <color name="color_btn_primary">#d81b60</color>
-    <color name="color_btn_secondary">#00574b</color>
-    <color name="color_gray_dark">#333333</color>
-    <color name="color_text_challenge_default">#333333</color>
-    <color name="color_text_challenge_correct">#0c7600</color>
-    <color name="color_text_challenge_incorrect">#d81b60</color>
+    <color name="color_primary">#4D9DE0</color>
+    <color name="color_primary_dark">#4188C1</color>
+    <color name="color_accent">#E1BC29</color>
+    <color name="color_secondary">#7768AE</color>
+    <color name="color_danger">#E15554</color>
+    <color name="color_success">#3BB273</color>
+    <color name="color_default">#333333</color>
+
+    <color name="modal_background">#f0ffffff</color>
+    <color name="color_text">@color/color_default</color>
+    <color name="color_text_challenge_default">@color/color_default</color>
+    <color name="color_text_challenge_correct">@color/color_success</color>
+    <color name="color_text_challenge_incorrect">@color/color_danger</color>
 </resources>

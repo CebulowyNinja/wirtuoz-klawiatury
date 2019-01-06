@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import pl.olencki.jan.keyboardvirtuoso.*;
+import pl.olencki.jan.keyboardvirtuoso.R;
 
 public class MainActivity extends AppActivity {
     @Override
@@ -56,5 +56,10 @@ public class MainActivity extends AppActivity {
 
     @Override
     public void onBackPressed() {
+        Intent homeIntent = new Intent(Intent.ACTION_MAIN);
+        homeIntent.addCategory(Intent.CATEGORY_HOME);
+        homeIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+        startActivity(homeIntent);
     }
 }

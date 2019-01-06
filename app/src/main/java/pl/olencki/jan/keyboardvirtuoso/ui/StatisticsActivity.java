@@ -37,6 +37,7 @@ public class StatisticsActivity extends AppActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        statisticsAdapter.clear();
         new LoadCombinedStatisticsAsyncTask().execute((Void) null);
     }
 

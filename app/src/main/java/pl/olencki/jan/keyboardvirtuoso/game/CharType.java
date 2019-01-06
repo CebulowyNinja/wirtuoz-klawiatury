@@ -25,7 +25,7 @@ public enum CharType {
         @Override
         protected char[] generateChars() {
             return new char[]{
-                    '!', '@', '#', '$'
+                    '!', '@', '$', '.', '?', ',', '-', '+', '=', '_'
             };
         }
     };

@@ -17,10 +17,10 @@
     <string name="text_setting_title">Ustawienia</string>
     <string name="text_statistics_title">Statystyki</string>
     <string name="btn_return">Wróć</string>
-    <string name="text_char_game_initial_desc">W trakcie rozgrywki masz za zadanie wpisać &lt;b>%1$d znaków&lt;/b>.&lt;br /> Pamiętaj o niezmienianiu klawiatury oraz niepoprawianiu znaków w trakcie rozgrywki.</string>
+    <string name="text_char_game_initial_desc">&lt;big>W trakcie rozgrywki masz za zadanie wpisać &lt;b>%1$d znaków&lt;/b>.&lt;/big>&lt;br />Pamiętaj o niezmienianiu klawiatury oraz niepoprawianiu znaków w trakcie rozgrywki.</string>
     <string name="text_char_game_summary_count">Udało Ci się wpisać poprawnie %1$d na %2$d znaków w czasie %3$.2f sekund</string>
     <string name="text_char_game_summary_speed">Osiągnąłeś szybkość %1$.1f znaków na minutę</string>
-    <string name="text_phrase_game_initial_desc">W trakcie rozgrywki masz za zadanie wpisać &lt;b>%1$d fraz&lt;/b>.&lt;br /> Wpisane frazy są zatwierdzane przyciskiem enter (dalej).&lt;br /> Pamiętaj o niezmienianiu klawiatury oraz postaraj się nie poprawiać wpisywanej frazy w trakcie rozgrywki.</string>
+    <string name="text_phrase_game_initial_desc">&lt;big>W trakcie rozgrywki masz za zadanie wpisać &lt;b>%1$d fraz&lt;/b>.&lt;/big>&lt;br /> Wpisane frazy są zatwierdzane przyciskiem enter (dalej).&lt;br /> Pamiętaj o niezmienianiu klawiatury oraz postaraj się nie poprawiać wpisywanej frazy w trakcie rozgrywki.</string>
     <string name="text_phrase_game_summary_count">Udało Ci się wpisać poprawnie %1$d na %2$d słów w czasie %3$.2f sekund</string>
     <string name="text_phrase_game_summary_speed">Osiągnąłeś szybkość %1$.1f słów na minutę</string>
     <string name="btn_statistics_clear">Usuń</string>
