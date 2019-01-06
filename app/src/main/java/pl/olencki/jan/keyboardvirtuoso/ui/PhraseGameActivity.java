@@ -236,6 +236,12 @@ public class PhraseGameActivity extends GameActivity {
                 return false;
             }
         });
+        editTextHidden.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+                return true;
+            }
+        });
 
         editTextChallenge.addTextChangedListener(new TextWatcher() {
             @Override

@@ -7,6 +7,7 @@ import android.text.Editable;
 import android.text.Html;
 import android.text.Spanned;
 import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodInfo;
 import android.view.inputmethod.InputMethodManager;
@@ -227,6 +228,11 @@ public class CharGameActivity extends GameActivity {
                 }
             }
         });
-
+        editTextHidden.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+                return true;
+            }
+        });
     }
 }

@@ -22,5 +22,13 @@
     <string name="text_phrase_game_initial_desc">After game start you should type &lt;b>%1$d phrases&lt;/b>. &lt;br /> Don\'t correct typed phrases. Don\'t change keyboard.</string>
     <string name="text_phrase_game_summary_count">You typed correct %1$d from %2%d words in %3$.2f seconds</string>
     <string name="text_phrase_game_summary_speed" >You type with speed %1$.1f words per minute</string>
-    <string name="btn_statistics_clear">Clear</string>
+    <string name="btn_statistics_clear">Delete</string>
+    <string name="text_statistics_phrase_speed">%1$.1f words per minute</string>
+    <string name="text_statistics_phrase_correct">%1$.0f%% correct words</string>
+    <string name="text_statistics_phrase_correct_diacritic">%1$.0f%% correct words with diacritic chars</string>
+    <string name="text_statistics_char_speed">%1$.1f chars per minute</string>
+    <string name="text_statistics_char_lower_letters">Lower letters – %1$.0f%% correct – %2$.1f per minute</string>
+    <string name="text_statistics_char_upper_letters">Upper letters – %1$.0f%% correct – %2$.1f per minute</string>
+    <string name="text_statistics_char_digits">Digits – %1$.0f%% poprawnie – %2$.1f per minute</string>
+    <string name="text_statistics_char_special">Special chars – %1$.0f%% poprawnie – %2$.1f per minute</string>
 </resources>
