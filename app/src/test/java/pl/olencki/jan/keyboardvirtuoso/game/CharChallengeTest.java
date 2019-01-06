@@ -13,46 +13,46 @@ import static org.junit.Assert.fail;
 public class CharChallengeTest {
     @Test
     public void testGetters() {
-        CharChallenge charChallenge = new CharChallenge(new CharWithType('a'));
-        assertEquals(new CharWithType('a'), charChallenge.getCharWithType());
+        CharChallenge challenge = new CharChallenge(new CharWithType('a'));
+        assertEquals(new CharWithType('a'), challenge.getCharWithType());
 
-        charChallenge.setElapsedTime(1);
-        assertEquals(1, charChallenge.getElapsedTime(), 0.001);
+        challenge.setElapsedTime(1);
+        assertEquals(1, challenge.getElapsedTime(), 0.001);
 
-        charChallenge.setTypedCharWithType(new CharWithType('b'));
-        assertEquals(new CharWithType('b'), charChallenge.getTypedCharWithType());
-        assertFalse(charChallenge.isCorrect());
+        challenge.setTypedCharWithType(new CharWithType('b'));
+        assertEquals(new CharWithType('b'), challenge.getTypedCharWithType());
+        assertFalse(challenge.isCorrect());
     }
 
     @Test
     public void testGenerateCharChallengeData() {
-        CharChallenge charChallenge = new CharChallenge(new CharWithType('~'));
+        CharChallenge challenge = new CharChallenge(new CharWithType('~'));
 
         try {
-            charChallenge.generateCharChallengeData(null, 0);
+            challenge.generateCharChallengeData(null, 0);
             fail("Not throw when gameId = 0");
         } catch (CharChallengeException e) {
         }
 
         try {
-            charChallenge.generateCharChallengeData(null, 1);
+            challenge.generateCharChallengeData(null, 1);
             fail("Not throw on unknown charType");
         } catch (CharChallengeException e) {
         }
 
-        charChallenge = new CharChallenge(new CharWithType('a'));
+        challenge = new CharChallenge(new CharWithType('a'));
         try {
-            charChallenge.generateCharChallengeData(null, 1);
+            challenge.generateCharChallengeData(null, 1);
             fail("Not throw on typedCharWithType = null");
         } catch (CharChallengeException e) {
         }
 
-        charChallenge.setTypedCharWithType(new CharWithType('a'));
+        challenge.setTypedCharWithType(new CharWithType('a'));
 
         CharChallengeData data = new CharChallengeData(null, 1, CharType.ALPHA_LOWER,
                                                        'a', 'a', true, 0);
         try {
-            assertEquals(data, charChallenge.generateCharChallengeData(null, 1));
+            assertEquals(data, challenge.generateCharChallengeData(null, 1));
         } catch (CharChallengeException e) {
             fail("Exception on correct data");
         }

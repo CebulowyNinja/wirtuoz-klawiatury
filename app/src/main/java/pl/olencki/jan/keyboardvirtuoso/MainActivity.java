@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         buttonStartPhrasesMode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, PhrasesModeActivity.class);
+                Intent intent = new Intent(MainActivity.this, PhraseGameActivity.class);
                 startActivity(intent);
             }
         });

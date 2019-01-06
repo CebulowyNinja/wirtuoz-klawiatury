@@ -29,4 +29,14 @@
         android:text="@string/btn_return"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ListView
+        android:id="@+id/list_statistics"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_statistics_title" />
+
 </android.support.constraint.ConstraintLayout>

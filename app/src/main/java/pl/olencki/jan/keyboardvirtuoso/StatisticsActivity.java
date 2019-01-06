@@ -15,6 +15,8 @@ import pl.olencki.jan.keyboardvirtuoso.gamesdata.CharGameStatisticsDao;
 import pl.olencki.jan.keyboardvirtuoso.gamesdata.GamesDatabase;
 import pl.olencki.jan.keyboardvirtuoso.gamesdata.KeyboardDao;
 import pl.olencki.jan.keyboardvirtuoso.gamesdata.KeyboardData;
+import pl.olencki.jan.keyboardvirtuoso.gamesdata.PhraseGameStatistics;
+import pl.olencki.jan.keyboardvirtuoso.gamesdata.PhraseGameStatisticsDao;
 
 public class StatisticsActivity extends AppCompatActivity {
     private Button buttonReturnToMenu;
@@ -33,16 +35,22 @@ public class StatisticsActivity extends AppCompatActivity {
                         StatisticsActivity.this.getApplicationContext());
                 KeyboardDao keyboardDao = db.keyboardDao();
                 CharGameStatisticsDao charGameStatisticsDao = db.charGameStatisticsDao();
+                PhraseGameStatisticsDao phraseGameStatisticsDao = db.phraseGameStatisticsDao();
+
                 Log.d("Statistics", "Stats quering runs");
                 List<KeyboardData> keyboards = keyboardDao.findAll();
                 for (KeyboardData keyboard : keyboards) {
                     Log.d("Statistics", keyboard.toString());
 
-                    List<CharGameStatistics> stats = charGameStatisticsDao.loadByKeyboardId(
+                    List<CharGameStatistics> charGameStatistics = charGameStatisticsDao.loadByKeyboardId(
                             keyboard.id);
-                    for (CharGameStatistics stat : stats) {
+                    for (CharGameStatistics stat : charGameStatistics) {
                         Log.d("Statistics", stat.toString());
                     }
+
+                    PhraseGameStatistics phraseGameStatistics = phraseGameStatisticsDao.loadByKeyboardId(
+                            keyboard.id);
+                    Log.d("Statistics", phraseGameStatistics.toString());
                 }
             }
         });
@@ -68,4 +76,5 @@ public class StatisticsActivity extends AppCompatActivity {
         Intent intent = new Intent(StatisticsActivity.this, MainActivity.class);
         startActivity(intent);
     }
+
 }

@@ -99,7 +99,7 @@ public abstract class GameActivity extends AppCompatActivity {
                     game.nextChallenge();
                     startChallenge();
                 }
-            }, getResources().getInteger(R.integer.delay_new_char_challenge));
+            }, getResources().getInteger(R.integer.delay_new_challenge));
         } else {
             startSummary();
         }

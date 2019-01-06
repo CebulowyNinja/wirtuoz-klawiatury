@@ -9,6 +9,7 @@ public interface PhraseGameStatisticsDao {
                    "SUM(Challenge.phraseLength) as totalLength, SUM(Challenge.typedPhraseLength) as totalTypedLength, " +
                    "SUM(Challenge.elapsedTime) as elapsedTime," +
                    "SUM(Challenge.wordsCount) as wordsCount, " +
+                   "SUM(Challenge.wordsDiacriticCount) as wordsDiacriticCount, " +
                    "SUM(Challenge.correctWordsCount) as correctWordsCount, " +
                    "SUM(Challenge.correctWordsDiacriticCount) as correctWordsDiacriticCount " +
                    "FROM PhraseChallenge as Challenge")
@@ -18,6 +19,7 @@ public interface PhraseGameStatisticsDao {
                    "SUM(Challenge.phraseLength) as totalLength, SUM(Challenge.typedPhraseLength) as totalTypedLength, " +
                    "SUM(Challenge.elapsedTime) as elapsedTime," +
                    "SUM(Challenge.wordsCount) as wordsCount, " +
+                   "SUM(Challenge.wordsDiacriticCount) as wordsDiacriticCount, " +
                    "SUM(Challenge.correctWordsCount) as correctWordsCount, " +
                    "SUM(Challenge.correctWordsDiacriticCount) as correctWordsDiacriticCount " +
                    "FROM PhraseChallenge as Challenge " +
@@ -30,6 +32,7 @@ public interface PhraseGameStatisticsDao {
                    "SUM(Challenge.phraseLength) as totalLength, SUM(Challenge.typedPhraseLength) as totalTypedLength, " +
                    "SUM(Challenge.elapsedTime) as elapsedTime," +
                    "SUM(Challenge.wordsCount) as wordsCount, " +
+                   "SUM(Challenge.wordsDiacriticCount) as wordsDiacriticCount, " +
                    "SUM(Challenge.correctWordsCount) as correctWordsCount, " +
                    "SUM(Challenge.correctWordsDiacriticCount) as correctWordsDiacriticCount " +
                    "FROM PhraseChallenge as Challenge " +

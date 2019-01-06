@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string-array name="text_challenge_phrases" tools:ignore="InconsistentArrays">
+        <item>Mój zegarek upadł do wody</item>
+        <item>Wiatr wieje z zachodu</item>
+        <item>Nie mam pieniędzy na koncie</item>
+        <item>Dzisiaj na obiad kotlety</item>
+        <item>Czas iść na zakupy</item>
+        <item>To problem z silnikiem</item>
+        <item>Słonie boją się myszy</item>
+        <item>Moje ulubione miejsce odpoczynku</item>
+        <item>Moja ulubiona dziedzina fizyki</item>
+        <item>Prosze udowodnij datę urodzenia</item>
+        <item>Muszę Ci za to podziękować</item>
+        <item>On jest jak każdy inny</item>
+        <item>Miłość znaczy wiele</item>>
+        <item>To tylko spacer z Twoją siostrą</item>
+        <item>Na to pytanie istnieje odpowiedź</item>
+        <item>Zgadzam się z Tobą</item>
+        <item>Nic więcej nie mów</item>
+        <item>Zrób to jeszce raz Marek</item>
+        <item>Nie mów do mnie takim tonem</item>
+        <item>Jesteś w tym całkiem dobry</item>
+        <item>Przestrzeń jest najważniejsza</item>
+        <item>Jesteś tego idealnym przykładem</item>
+        <item>To zbyt trudne dla mnie</item>
+        <item>Nie pij tego za dużo </item>
+        <item>Czas na jakąś przerwę</item>
+        <item>Ta muzyka jest lepsza niż brzmi</item>
+        <item>Pieniądze to nie wszystko</item>
+        <item>Przypominasz mi kogoś</item>
+        <item>Warto było dla tego żyć</item>
+        <item>Będę grał w gre</item>
+        <item>Nie dajesz znaku życia</item>
+    </string-array>
+</resources>

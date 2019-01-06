@@ -41,7 +41,7 @@ public class PhraseChallengeData {
     public int correctWordsCount;
     public int correctWordsDiacriticCount;
 
-    public int elapsedTime;
+    public float elapsedTime;
 
     @Ignore
     public PhraseChallengeData(Long id, long gameId, @NonNull String phrase,
@@ -58,7 +58,7 @@ public class PhraseChallengeData {
     public PhraseChallengeData(Long id, long gameId, @NonNull String phrase,
                                int phraseLength, int wordsCount, int wordsDiacriticCount, boolean isCorrect,
                                @NonNull String typedPhrase, int typedPhraseLength, int correctWordsCount,
-                               int correctWordsDiacriticCount, int elapsedTime) {
+                               int correctWordsDiacriticCount, float elapsedTime) {
         this.id = id;
         this.gameId = gameId;
         this.phrase = phrase;

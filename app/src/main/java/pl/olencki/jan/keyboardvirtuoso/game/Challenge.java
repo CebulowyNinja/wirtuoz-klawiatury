@@ -30,9 +30,9 @@ public abstract class Challenge {
         elapsedTime += (stopDate.getTime() - startDate.getTime()) / 1000f;
     }
 
+    public abstract boolean isCorrect();
+
     public abstract String getText();
 
     public abstract String getTypedText();
-
-    public abstract boolean isCorrect();
 }

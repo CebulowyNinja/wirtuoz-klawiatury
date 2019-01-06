@@ -28,14 +28,6 @@ public enum CharType {
                     '!', '@', '#', '$'
             };
         }
-    },
-    SPECIAL_MATH {
-        @Override
-        protected char[] generateChars() {
-            return new char[]{
-                    '+', '-', '*', '/'
-            };
-        }
     };
 
     private final char[] chars;

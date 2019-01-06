@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="text_challenge_phrases">
+        <item>my watch fell in the water</item>
+        <item>prevailing wind from the east</item>
+        <item>never too rich and never too thin</item>
+        <item>breathing is difficult</item>
+        <item>I can see the rings on Saturn</item>
+        <item>physics and chemistry are hard</item>
+        <item>my bank account is overdrawn</item>
+        <item>elections bring out the best</item>
+        <item>we are having spaghetti</item>
+        <item>time to go shopping</item>
+        <item>a problem with the engine</item>
+        <item>elephants are afraid of mice</item>
+        <item>my favorite place to visit</item>
+        <item>three two one zero blast off</item>
+        <item>my favorite subject is psychology</item>
+        <item>circumstances are unacceptable</item>
+        <item>watch out for low flying objects</item>
+        <item>if at first you do not succeed</item>
+        <item>please provide your date of birth</item>
+        <item>we run the risk of failure</item>
+        <item>prayer in schools offends some</item>
+        <item>he is just like everyone else</item>
+        <item>great disturbance in the force</item>
+        <item>love means many things</item>
+        <item>you must be getting old</item>
+        <item>the world is a stage</item>
+        <item>can I skate with sister today</item>
+        <item>neither a borrower nor a lender be</item>
+        <item>one heck of a question</item>
+        <item>question that must be answered</item>
+    </string-array>
+</resources>

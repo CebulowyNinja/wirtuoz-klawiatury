@@ -60,9 +60,9 @@ public class CharChallenge extends Challenge {
 
         data = new CharChallengeData(id, gameId,
                                      charWithType.getCharType(), charWithType.getChar());
+        data.isCorrect = isCorrect();
         data.typedCharacter = typedCharWithType.getChar();
         data.elapsedTime = elapsedTime;
-        data.isCorrect = isCorrect();
 
         return data;
     }

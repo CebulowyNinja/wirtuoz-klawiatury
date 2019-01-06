@@ -46,4 +46,16 @@ public class CharGameStatistics {
         return Objects.hash(charType, charsCount, correctCharsCount, elapsedTime,
                             elapsedTimeCorrect);
     }
+
+    //TODO delete
+    @Override
+    public String toString() {
+        return "CharGameStatistics{" +
+                "charType=" + charType +
+                ", charsCount=" + charsCount +
+                ", correctCharsCount=" + correctCharsCount +
+                ", elapsedTime=" + elapsedTime +
+                ", elapsedTimeCorrect=" + elapsedTimeCorrect +
+                '}';
+    }
 }

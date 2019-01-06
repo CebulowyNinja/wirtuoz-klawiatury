@@ -2,5 +2,6 @@
 <resources>
     <integer name="animation_time_short">100</integer>
     <integer name="animation_time_long">1500</integer>
-    <integer name="delay_new_char_challenge">500</integer>
+    <integer name="delay_new_challenge">800</integer>
+    <integer name="delay_new_phrase_challenge">1000</integer>
 </resources>

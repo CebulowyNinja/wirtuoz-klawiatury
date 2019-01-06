@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".CharGameActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".PhrasesModeActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".PhraseGameActivity" android:screenOrientation="portrait"/>
         <activity android:name=".SettingsActivity" android:screenOrientation="portrait"/>
         <activity android:name=".StatisticsActivity" android:screenOrientation="portrait"/>
     </application>

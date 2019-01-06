@@ -1,5 +1,7 @@
 package pl.olencki.jan.keyboardvirtuoso.gamesdata;
 
+import android.arch.persistence.room.Ignore;
+
 import java.util.Objects;
 
 public class PhraseGameStatistics {
@@ -11,19 +13,34 @@ public class PhraseGameStatistics {
     public float elapsedTime;
 
     public int wordsCount;
+    public int wordsDiacriticCount;
     public int correctWordsCount;
     public int correctWordsDiacriticCount;
 
+    @Ignore
+    public PhraseGameStatistics() {
+    }
+
     public PhraseGameStatistics(int phrasesCount, int correctPhrasesCount, int totalLength, int totalTypedLength,
-                                float elapsedTime, int wordsCount, int correctWordsCount, int correctWordsDiacriticCount) {
+                                float elapsedTime, int wordsCount, int wordsDiacriticCount, int correctWordsCount, int correctWordsDiacriticCount) {
         this.phrasesCount = phrasesCount;
         this.correctPhrasesCount = correctPhrasesCount;
         this.totalLength = totalLength;
         this.totalTypedLength = totalTypedLength;
         this.elapsedTime = elapsedTime;
         this.wordsCount = wordsCount;
+        this.wordsDiacriticCount = wordsDiacriticCount;
         this.correctWordsCount = correctWordsCount;
         this.correctWordsDiacriticCount = correctWordsDiacriticCount;
+    }
+
+    @Ignore
+    public float getWordsPerMinute() {
+        if(elapsedTime == 0) {
+            return 0;
+        }
+
+        return (totalLength - phrasesCount)/elapsedTime*60/5;
     }
 
     @Override
@@ -46,5 +63,21 @@ public class PhraseGameStatistics {
 
         return Objects.hash(phrasesCount, correctPhrasesCount, totalLength, totalTypedLength,
                             elapsedTime, wordsCount, correctWordsCount, correctWordsDiacriticCount);
+    }
+
+    //TODO delte
+    @Override
+    public String toString() {
+        return "PhraseGameStatistics{" +
+                "phrasesCount=" + phrasesCount +
+                ", correctPhrasesCount=" + correctPhrasesCount +
+                ", totalLength=" + totalLength +
+                ", totalTypedLength=" + totalTypedLength +
+                ", elapsedTime=" + elapsedTime +
+                ", wordsCount=" + wordsCount +
+                ", wordsDiacriticCount=" + wordsDiacriticCount +
+                ", correctWordsCount=" + correctWordsCount +
+                ", correctWordsDiacriticCount=" + correctWordsDiacriticCount +
+                '}';
     }
 }
